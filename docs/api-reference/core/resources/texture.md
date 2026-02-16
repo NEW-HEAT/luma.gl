@@ -1,6 +1,6 @@
 # Texture
 
-A `Texture` are GPU objects that contain one or more images that all have the same image format, that can be accessed from shaders.
+A `Texture` is a GPU object that contains one or more images that all have the same image format, and that can be accessed from shaders.
 
 While the idea behind textures is simple in principle (a grid of pixels stored on GPU memory), GPU Textures are surprisingly complex objects. It can be helpful to read the [API Guide section on textures](http://localhost:3000/docs/api-guide/gpu/gpu-textures) to make sure you have a full picture.
 
@@ -93,7 +93,7 @@ Note that the allowed combinations are very limited, especially in WebGPU.
 | `Texture.COPY_SRC`          | 0x01  | Enables this texture to be used as a source in CommandEncoder copy commands.      |
 | `Texture.COPY_DST`          | 0x02  | Enables this texture to be used as a destination in CommandEncoder copy commands. |
 | `Texture.TEXTURE`           | 0x04  |                                                                                   |
-| `Texture.STORAGE_BINDING`   | 0x08  | Enables this texture to used as a storage binding.                                |
+| `Texture.STORAGE_BINDING`   | 0x08  | Enables this texture to be used as a storage binding.                                |
 | `Texture.RENDER_ATTACHMENT` | 0x10  | Enables this texture to be used as a render attachment.                           |
 
 ## TextureDimension
@@ -115,7 +115,7 @@ These are referred to as external (to the GPU) images.
 
 | `Image` (`HTMLImageElement`)   | image will be used to fill the texture. width and height will be deduced.                             |
 | `Canvas` (`HTMLCanvasElement`) | canvas will be used to fill the texture. width and height will be deduced.                            |
-| `Video` (`HTMLVideoElement`)   | video will be used to continously update the texture. width and height will be deduced.               |
+| `Video` (`HTMLVideoElement`)   | video will be used to continuously update the texture. width and height will be deduced.               |
 | `ImageData`                    | `canvas.getImageData()` - Used to fill the texture. width and height will be deduced.                 |
 
 ## TextureData

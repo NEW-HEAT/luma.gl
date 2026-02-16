@@ -13,7 +13,7 @@ A `QuerySet` holds a number of 64 bit values.
 
 Timer queries are available if the `timestamp-query` extension is available. (On WebGL 2 this is equivalent to the 
 [`EXT_disjoint_timer_query_webgl2`](https://www.khronos.org/registry/webgl/extensions/EXT_disjoint_timer_query_webgl2/)
-being supported on the current browser.
+being supported on the current browser.)
 
 Note that even when supported, timer queries can fail whenever a change in the GPU occurs that will make the values returned by this extension unusable for performance metrics, for example if the GPU is throttled mid-frame. 
 
@@ -39,7 +39,7 @@ const timestampQuery = device.createQuerySet({type: 'timestamp'}});
 | `timestamp` (`RenderPass begin/end`)     | `beginRenderPass({timestampQuery: ...})`     | Time taken by GPU to execute RenderPass commands                           |
 | `timestamp`  (`ComputePass begin/end`)   | `beginComputePass({timestampQuery: ...})`    | Time taken by GPU to execute ComputePass commands                          |
 | `occlusion`                              | `beginOcclusionQuery({conservative: false})` | Occlusion query how many fragment samples pass tests (depth, stencil, ...) |
-| `occlusion`                              | `beginOcclusionQuery({conservative: true})`  | Same as above above, but less accurate and faster                          | 
+| `occlusion`                              | `beginOcclusionQuery({conservative: true})`  | Same as above, but less accurate and faster                          | 
 | `transform-feedback` (Not yet supported) | `beginTransformFeedbackQuery()`              | Number of primitives that are written to transform feedback buffers.       |
 
 In addition to above queries, Query object also provides `getTimeStamp` which returns GPU time stamp at the time this query is executed by GPU. Two sets of these methods can be used to calculate time taken by GPU for a set of GL commands.

@@ -5,7 +5,7 @@ Sampling parameters are applied during shader execution and control how values (
 are read from textures.
 
 Note that luma.gl automatically creates a default `Sampler` for each `Texture`.
-A texture's default sampler parameters can be specified creating the texture via `device.createTexture({sampler: SamplerProps}))`.
+A texture's default sampler parameters can be specified when creating the texture via `device.createTexture({sampler: SamplerProps}))`.
 Unless an application needs to render the same texture with different sampling parameters,
 an application typically does not need to explicitly instantiate samplers.
 
@@ -41,7 +41,7 @@ const texture = device.createTexture({
 console.log(texture.sampler);
 ```
 
-Create a new **comparison sampler**, by specifying the `compare` sampler property creates a comparison sampler.
+Create a new **comparison sampler** by specifying the `compare` sampler property.
 
 ```typescript
 const sampler = device.createSampler(gl, {
@@ -119,7 +119,7 @@ For more information, see [GPU Textures](/docs/api-guide/gpu/gpu-textures#mipmap
 
 #### Texture Max Anisotropy
 
-Controls multiple mipmap level can be consulted when texturing a pixel.
+Controls how multiple mipmap levels can be consulted when texturing a pixel.
 
 #### Texture Comparison Function
 

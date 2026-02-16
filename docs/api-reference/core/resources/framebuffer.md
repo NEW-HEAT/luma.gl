@@ -47,9 +47,7 @@ framebuffer.resize(window.innerWidth, window.innerHeight);
 ```
 
 To render into a canvas make sure you have a `CanvasContext` for that HTML or offscreen canvas.
-You can the obtain a `Framebuffer` object from the `CanvasContext` using `canvasContext.getDefaultFramebuffer()`. 
-
-For the 
+You can then obtain a `Framebuffer` object from the `CanvasContext` using `canvasContext.getDefaultFramebuffer()`. 
 
 ```typescript
 const canvasFramebuffer = canvasContext.getDefaultFramebuffer();
@@ -57,7 +55,7 @@ const canvasRenderPass = device.beginRenderPass({framebuffer: canvasFramebuffer}
 model2.draw({renderPass: screenRenderPass, ...});
 ```
 
-Alternatively can create texture based framebuffers for off-screen rendering.
+Alternatively, you can create texture based framebuffers for off-screen rendering.
 Specifying a separate offscreen framebuffer for rendering:
 
 ```typescript
@@ -67,7 +65,7 @@ const offScreenRenderPass = device.beginRenderPass({framebuffer: offScreenFrameb
 model1.draw({renderPass: offScreenRenderPass, ...});
 offScreenRenderPass.endPass();
 
-// Textures attached offscreenFramebuffer now contain the results of the first renderpass, 
+// Textures attached to offscreenFramebuffer now contain the results of the first renderpass, 
 // and those textures can be used as input for a second to-screen render pass
 
 const screenRenderPass = device.beginRenderPass();
@@ -80,26 +78,26 @@ model2.draw({renderPass: screenRenderPass, ...});
 
 The following values can be provided for each attachment point
 
-- `Texture` - attaches at mipmapLevel 0 (the the supplied `Texture`'s default `TextureView`.
+- `Texture` - attaches at mipmapLevel 0 (the supplied `Texture`'s default `TextureView`).
 - `TextureView`
    - `2d`: attaches the specified mipmapLevel from the supplied `Texture`, or cubemap face. The second element in the array must be `0`.
-   - `cube`: face (depth), mipmapLevel=0 - attaches the specifed cubemap face from the `Texture`, at the specified mipmap level.
-   - `2d-array`, layer (number), mipmapLevel=0 (number)] - attaches the specifed layer from the `Texture`, at the specified mipmap level.
-   - `3d`, layer (number), mipmapLevel=0 (number)] - attaches the specifed layer from the `Texture3D`, at the specified mipmap level.
+   - `cube`: face (depth), mipmapLevel=0 - attaches the specified cubemap face from the `Texture`, at the specified mipmap level.
+   - `2d-array`, layer (number), mipmapLevel=0 (number)] - attaches the specified layer from the `Texture`, at the specified mipmap level.
+   - `3d`, layer (number), mipmapLevel=0 (number)] - attaches the specified layer from the `Texture3D`, at the specified mipmap level.
   
 ## Framebuffer Attachments
 
 A `Framebuffer` holds:
 
 - an array of "color attachments" (often just one) that store data (one or more color `Texture`s)
-- an optional depth, stencil or combined depth-stencil `Texture`).
+- an optional depth, stencil or combined depth-stencil `Texture`.
 
 All attachments must be in the form of `Texture`s.
 
 ## Resizing Framebuffers
 
 Resizing a framebuffer effectively destroys all current textures and creates new 
-textures with otherwise similar properties. All data stored in the previous textures are lost.
+textures with otherwise similar properties. All data stored in the previous textures is lost.
 This data loss is usually a non-issue as resizes are usually performed between render passes,
 (typically to match the size of an off screen render buffer with the new size of the output canvas).
 
@@ -120,7 +118,7 @@ This data loss is usually a non-issue as resizes are usually performed between r
 
 - `device`: `Device` - holds a reference to the `Device` that created this `Framebuffer`.
 - `handle`: `unknown` - WebGL: holds the underlying `WebGLFramebuffer`. No underlying object on WebGPU.
-- `props`: `FramebufferProps` - holds a copy of the `FramebufferProps` used to create this `Buffer`.
+- `props`: `FramebufferProps` - holds a copy of the `FramebufferProps` used to create this `Framebuffer`.
 
 ### `colorAttachments`
 
@@ -128,7 +126,7 @@ This data loss is usually a non-issue as resizes are usually performed between r
 colorAttachments: TextureView)[]
 ```
 
-Framebuffer attachments lets the user specify the textures that will be used for a RenderPass, 
+Framebuffer attachments let the user specify the textures that will be used for a RenderPass, 
 together with some additional options for how to clear color textures.
 
 
@@ -138,7 +136,7 @@ together with some additional options for how to clear color textures.
 depthStencilAttachments: TextureView[]
 ```
 
- Framebuffer attachments lets the user specify the depth stencil texture that will be used for a RenderPass, 
+ Framebuffer attachments let the user specify the depth stencil texture that will be used for a RenderPass, 
  together with some additional options for how to clear depth and stencil buffers.
  
 ## Methods
@@ -148,7 +146,7 @@ depthStencilAttachments: TextureView[]
 Create with `device.createFramebuffer(...)`. (`Framebuffer` is an abstract class and cannot be instantiated directly with `new Framebuffer()`.)
 
 An application can render into an (HTML or offscreen) canvas by obtaining a
-`Framebuffer` object from a `CanvasContext` using `canvasContext.getDefaultFramebuffer()`. Alternatively can create texture based framebuffers for off-screen rendering.
+`Framebuffer` object from a `CanvasContext` using `canvasContext.getDefaultFramebuffer()`. Alternatively, you can create texture based framebuffers for off-screen rendering.
 
 ### destroy(): void
 
@@ -165,15 +163,15 @@ Resizes all the `Framebuffer`'s current attachments to the new `width` and `heig
 - `width` - the new width of `Framebuffer` in pixels
 - `height` - the new height of `Framebuffer` in pixels
 
-Note the `framebuffer.resize()` method has been designed so that it can be called every frame without performance concerns. While the actual resizing of attachments can be expensive, the `resize()` methods checks if `width` or `height` have changed before actually resizing any attachments.
+Note the `framebuffer.resize()` method has been designed so that it can be called every frame without performance concerns. While the actual resizing of attachments can be expensive, the `resize()` method checks if `width` or `height` have changed before actually resizing any attachments.
 
 ## Remarks
 
 **WebGPU**
-- The `Framebuffer` class is a pure luma.gl class as this concept does not exist natively in WebGPU (attachment information has to be provided through the `GPURenderPassDescriptor` `colorAttachments` and the `depthStencilAttachment` fields every frame when a render pass is created).`.
-- `resize()` will destroy and recreate textures (meaning the the underlying `GPUTexture` / `GPUTextureView` handles are no longer the same after a `resize()`
+- The `Framebuffer` class is a pure luma.gl class as this concept does not exist natively in WebGPU (attachment information has to be provided through the `GPURenderPassDescriptor` `colorAttachments` and the `depthStencilAttachment` fields every frame when a render pass is created).
+- `resize()` will destroy and recreate textures (meaning the underlying `GPUTexture` / `GPUTextureView` handles are no longer the same after a `resize()`)
 
 **WebGL**
 - The `Framebuffer` class wraps the `WebGLFramebuffer` object, see e.g. [Framebuffer](https://www.khronos.org/opengl/wiki/Framebuffer)
   and [Framebuffer Object](https://www.khronos.org/opengl/wiki/Framebuffer_Object) in the OpenGL Wiki.
-- `resize()` will erase the current content of any attachments, but not actually recreate them (The underlying`WebGLTexture` handles are not changed).
+- `resize()` will erase the current content of any attachments, but not actually recreate them (the underlying `WebGLTexture` handles are not changed).

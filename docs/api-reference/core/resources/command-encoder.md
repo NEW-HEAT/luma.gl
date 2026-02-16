@@ -62,7 +62,7 @@ Valid image data types:
 
 - `null` - create empty texture of specified format
 - Typed array - initializes from image data in typed array according to `format`
-- `Buffer`|`WebGLBuffer` - (WEBGL2) initialized from image data in WebGLBuffer accoeding to `format`.
+- `Buffer`|`WebGLBuffer` - (WEBGL2) initialized from image data in WebGLBuffer according to `format`.
 - `HTMLImageElement`|`Image` - Initializes with content of image. Auto deduces texture width/height from image.
 - `HTMLCanvasElement` - Inits with contents of canvas. Auto width/height.
 - `HTMLVideoElement` - Creates video texture that continuously updates. Auto width/height.
@@ -96,7 +96,7 @@ Note: does not allocate storage
 - `height` (`GLint`) - height of the sub image to be updated
 - `level` (`GLint`) - mip level to be updated
 - `format` (`GLenum`) - internal format of image data.
-- `typ` (`GLenum`) - format of array (autodetect from type) or (WEBGL2) format of buffer or ArrayBufferView
+- `type` (`GLenum`) - format of array (autodetect from type) or (WEBGL2) format of buffer or ArrayBufferView
 - `dataFormat` (`GLenum`) - format of image data.
 - `offset` (`Number`) - (WEBGL2) offset from start of buffer
 - `border` (`GLint`) - must be 0.

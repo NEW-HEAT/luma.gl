@@ -2,7 +2,7 @@
 
 A `VertexArray` stores a set of vertex attribute bindings, including the index buffer.
 
-On WebGL, attribute can be bound to constants,
+On WebGL, attributes can be bound to constants.
 
 
 ## Usage
@@ -61,4 +61,4 @@ vertexArray.setConstant(location: number, buffer | null): void
 
 Note:
 - Under WebGL, a WebGL VertexArrayObject will be created.
-- Under WebGPU, this is a simply an API class that holds attributes.
+- Under WebGPU, this is simply an API class that holds attributes.

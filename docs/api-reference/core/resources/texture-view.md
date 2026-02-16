@@ -4,7 +4,7 @@ A `TextureView` is a view onto some subset of the texture subresources defined b
 
 ### Subresource Selection
 
-The set of texture subresources of a texture view view, is the subset of the subresources 
+The set of texture subresources of a texture view is the subset of the subresources 
 of the associated `Texture` for which each subresource  satisfies the following:
 - The mipmap level of s is ≥ props.baseMipLevel and < props.baseMipLevel + props.mipLevelCount.
 - The array layer of s is ≥ props.baseArrayLayer and < props.baseArrayLayer + props.arrayLayerCount.
