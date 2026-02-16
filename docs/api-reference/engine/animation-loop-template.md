@@ -47,7 +47,7 @@ const animationLoop = makeAnimationLoop(AppAnimationLoopTemplate).start();
 
 The `AnimationLoopTemplate` constructor accepts the `AnimationLoopProps` type documented in the [`AnimationLoop`](./animation-loop) page, with the following additional options:
 
-- `adapters?`: `Adapter[]` - list of adapters used to create the device (these are forwarded to )
+- `adapters?`: `Adapter[]` - list of adapters used to create the device (these are forwarded to `luma.createDevice`)
 
 ### AnimationProps
 

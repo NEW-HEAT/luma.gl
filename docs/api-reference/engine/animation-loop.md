@@ -168,5 +168,5 @@ The callbacks `onInitialize`, `onRender` and `onFinalize` that the app supplies 
 - Postpones context creation until the page (i.e. all HTML) has been loaded. At this time it is safe to specify canvas ids.
 - The supplied callback function must return a WebGLRenderingContext or an error will be thrown.
 - This callback registration function should not be called if a `WebGLRenderingContext` was supplied to the AnimationLoop constructor.
-- `useDevicePixels` can accept a custom ratio (Number), instead of `true` or `false`. This allows rendering at much smaller or higher resolutions. When using high value (usually more than device pixel ratio), it is possible it can get clamped down, this happens due to system memory limitation, in such cases a warning will be logged to the browser console.
+- `useDevicePixels` can accept a custom ratio (Number), instead of `true` or `false`. This allows rendering at much smaller or higher resolutions. When using a high value (usually more than device pixel ratio), it is possible it can get clamped down, this happens due to system memory limitation, in such cases a warning will be logged to the browser console.
 - `onInitialize` is called after page load completes and the passed in device promise has been resolved (the device has been created).

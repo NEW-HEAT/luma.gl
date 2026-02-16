@@ -111,4 +111,4 @@ new AsyncTexture(device: Device, props: AsyncTextureProps);
 ## Remarks
 
 - As of v9.1, in order to streamline code across WebGL and WebGPU, `Textures` no longer accept promises (e.g. `loadImage(url)`) when setting data.
-- The AsyncTexture class can be seen as an optional convenience class that helps applications avoid tedious book keeping of texture data (image) loading.
+- The AsyncTexture class can be seen as an optional convenience class that helps applications avoid tedious bookkeeping of texture data (image) loading.

@@ -92,7 +92,7 @@ const model = new Model(device, {
 | `shaderInputs?`    | `ShaderInputs`                                 | Pre-created, typed shaderInputs.                                                  |
 | `onBeforeRender?`  | `Function`                                     | function to be called before every time this model is drawn.                      |
 | `onAfterRender?`   | `Function`                                     | function to be called after every time this model is drawn.                       |
-| `debugShaders?`    | `'error' \| 'never' \| 'warnings' \| 'always'` | Specify what triggers the display shader compilation log (default: `'error'`). |
+| `debugShaders?`    | `'error' \| 'never' \| 'warnings' \| 'always'` | Specify what triggers display of the shader compilation log (default: `'error'`). |
 
 Less commonly used properties:
 

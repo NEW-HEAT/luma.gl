@@ -22,7 +22,7 @@ export type ShaderPassRendererProps = {
   /** Optional typed ShaderInputs object for setting uniforms */
   shaderInputs: ShaderInputs;
 };
-``
+```
 
 ## Methods
 

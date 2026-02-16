@@ -75,7 +75,7 @@ const model = new Computation(device, {
 | `source`               | `Shader` \| _string_                           | A vertex shader object, or source as a string.                                    |
 | `modules`          |                                                | shader modules to be applied (shadertools).                                       |
 | `pipelineFactory?` |                                                | `PipelineFactory` to use for program creation and caching.                        |
-| `debugShaders?`    | `'error' \| 'never' \| 'warnings' \| 'always'` | Specify what triggers the display shader compilation log (default: `'error'`). |
+| `debugShaders?`    | `'error' \| 'never' \| 'warnings' \| 'always'` | Specify what triggers display of the shader compilation log (default: `'error'`). |
 
 `ComputationProps` also include `ComputePipelineProps`, which are passed through to the `ComputePipeline` constructor, e.g:
 

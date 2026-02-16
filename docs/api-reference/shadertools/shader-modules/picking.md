@@ -10,7 +10,7 @@ The `picking` shader module in `@luma.gl/shadertools` is deprecated. Use the pic
 
 Provides support for color-based picking. 
 
-The `picking` modules supports picking and highlighting for both instanced and non-instanced data:
+The `picking` module supports picking and highlighting for both instanced and non-instanced data:
 - pick a specific *instance* in an instanced draw call
 - highlight all fragments of an *instance* based on its picking color
 - pick "group of primitives" with the same picking color in non-instanced draw-calls

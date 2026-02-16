@@ -14,11 +14,8 @@ GPU picking is based on the conclusion that each pixel on the screen was generat
 
 Depending on the structure of the shader, each object can either correspond to an `instance` or a group of vertexes.
 
-An additional consideration 
 
-li
-
-The `gpuPicking` modules supports:
+The `gpuPicking` module supports:
 - picking of object indexes
 - highlighting of objects
 - pick a specific *instance* in an instanced draw call

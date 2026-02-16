@@ -62,7 +62,7 @@ Returns an Object : attributes, framebuffer, uniforms, discard, parameters
 
 Updates input `props` object used to build `Model` object, with data required for texture transform.
 
-- `props` (`Object`) - props for building `Model` object, it will updated with required options (`{vs, fs, modules, uniforms, inject}`) for texture transform.
+- `props` (`Object`) - props for building `Model` object, it will be updated with required options (`{vs, fs, modules, uniforms, inject}`) for texture transform.
 
 Returns updated object.
 
