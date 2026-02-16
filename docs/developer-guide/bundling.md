@@ -22,7 +22,7 @@ You will have to check the documentation of your particular bundler to see what 
 
 ### About Tree-Shaking
 
-luma.gl is designed to fully leverage tree-shaking. Tree-shaking should be possible with any supporting browser but development has currentle focusing on enabling the webpack 4 + babel 7 combination which provides excellent results.
+luma.gl is designed to fully leverage tree-shaking. Tree-shaking should be possible with any supporting browser but development has currently been focusing on enabling the webpack 4 + babel 7 combination which provides excellent results.
 
 Some things to be aware of when working with tree-shaking:
 
@@ -54,9 +54,9 @@ So, what kind of impact on bundle sizes should you expect when using luma.gl? Wh
 
 ### Future Work
 
-This is not the final word on luma.gl bundle size. More work is being done to reduce the size of luma.gl and we are confident that even as fture releases will have more functionality, we will be able to keep the library code from growing and, more importantly, make luma.gl even more "tree shakeable", with the intention that apps should only "pay for what they use".
+This is not the final word on luma.gl bundle size. More work is being done to reduce the size of luma.gl and we are confident that even as future releases will have more functionality, we will be able to keep the library code from growing and, more importantly, make luma.gl even more "tree shakeable", with the intention that apps should only "pay for what they use".
 
 ## Remarks
 
 - **Optimizing for minified code** - Due to inclusion of sourcemaps etc, the bundle size impact of luma.gl tends to look more significant in development builds than in the final production builds. While reducing the size of the development libraries is also desirable, the current goal is to ensure the impact of adding luma.gl on the final, minified/uglified application bundle is as small as possible.
-- Compressed bundle sizes are calculated using `gzip -9`. Consider using slower `brotli` compression for static assests, it typically provides an additional 20% reduction.
+- Compressed bundle sizes are calculated using `gzip -9`. Consider using slower `brotli` compression for static assets, it typically provides an additional 20% reduction.

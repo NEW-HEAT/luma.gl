@@ -25,8 +25,8 @@ Note that JavaScript is a garbage collected language and while memory allocation
 always be tracked, it is only possible for luma.gl to track GPU memory deallocations if
 they are performed through the luma.gl API (by calling the `.destroy()` methods on `Buffer` and `Texture` objects).
 
-Apart from GPU memory tracking for luma.gl also maintain counts of the various
-other luma.gl API objects. Such object generally do not consume a lot of memory,
+Apart from GPU memory tracking, luma.gl also maintains counts of the various
+other luma.gl API objects. Such objects generally do not consume a lot of memory,
 however tracking allocations can help spot resource leaks or unnecessary work being done.
 
 ## Performance Profiling

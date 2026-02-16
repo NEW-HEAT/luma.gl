@@ -30,7 +30,7 @@ v9.2 brings full WebGPU support. Some additional deprecations and breaking chang
 
 **`CanvasContext` simplifications**
 - `canvasContext.devicePixelWidth` and `canvasContext.devicePixelHeight` are now kept updated to exact device pixel size of underlying canvas. 
-- Instead `canvasContext.setDrawingBufferSize()` to explicitly control drawing buffer size, if not using `CanvasContextProps.autoResize` 
+- Instead use `canvasContext.setDrawingBufferSize()` to explicitly control drawing buffer size, if not using `CanvasContextProps.autoResize` 
 - A new `DeviceProps.onResize` callback can be used to react to changes.
 - `CanvasContextProps.useDevicePixelRatio` no longer accepts `number`s, just a `boolean` value. 
 
@@ -43,7 +43,7 @@ v9.1 continues to build out WebGPU support. Some additional deprecations and bre
 
 **Major change: Adapters**
 
-- When initializing luma.gl, applications now import an `Adapter` singleton from the WebGPU and/or the WebGL module, and passes the adapter object(s) to `luma.createDevice()`, `makeAnimationLoop` etc. 
+- When initializing luma.gl, applications now import an `Adapter` singleton from the WebGPU and/or the WebGL module, and pass the adapter object(s) to `luma.createDevice()`, `makeAnimationLoop` etc. 
 - `luma.registerDevices()` can be replaced with `luma.registerAdapters()` if global registration is still desired.
 
 **Major change: Texture and AsyncTextures**
@@ -61,7 +61,7 @@ v9.1 continues to build out WebGPU support. Some additional deprecations and bre
 | `luma.registerDevices()`      | Deprecated | [`luma.registerAdapters()`][adapters].       | Adapters provide a cleaner way to work with GPU backends.       |
 | `DeviceProps.canvas`          | Moved      | [`DeviceProps.createCanvasContext`][canvas]. | Move canvas related props to `props.createCanvasContext: {}`.   |
 | `DeviceProps.<webgl options>` | Moved      | [`DeviceProps.webgl.<options>`][webgl].      | Move canvas related props to `props.webgl: {}`.                 |
-| `DeviceProps.break`           | Removed    |                                              | Use an alterative [debugger][debugging]                         |
+| `DeviceProps.break`           | Removed    |                                              | Use an alternative [debugger][debugging]                        |
 | `TextureProps.data` (Promise) | Removed    | `AsyncTexture` class                         | `Texture` no longer accept promises. Use `AsyncTexture`         |
 | `Parameters.blend`            | New        |                                              | Explicit activation of color blending                           |
 | `triangle-fan-webgl` topology | Removed    | `triangle-strip`.                            | Reorganize your geometries                                      |
@@ -98,4 +98,4 @@ luma.gl v9 is a major modernization of the luma.gl API, with many breaking chang
 ## Upgrading to v8 and earlier releases
 
 This page only covers luma.gl v9 and later releases. 
-For information on upgrading to from v8 and earlier releases, see the [Legacy Upgrade Guide](/docs/legacy/legacy-upgrade-guide).
+For information on upgrading from v8 and earlier releases, see the [Legacy Upgrade Guide](/docs/legacy/legacy-upgrade-guide).

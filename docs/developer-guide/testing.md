@@ -19,7 +19,7 @@ lead to problems with context loss etc as the test scripts grow.
 A frequent problem with WebGL and WebGPU libraries is that they are supported in browsers, 
 but tests typically run on CI machines in the cloud that often do not even have a GPU.
 
-luma.gl has integrations with headless gl and puppeteer that allows tests to be run outside of browser.s
+luma.gl has integrations with headless gl and puppeteer that allows tests to be run outside of browsers.
 
 ## Render Tests
 

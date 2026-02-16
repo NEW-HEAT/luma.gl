@@ -52,7 +52,7 @@ const fs2 = `
 `;
 ```
 
-We have two vertex and fragment shader pairs: one will move vertices to the left, the other moves vertices to the right. Both fragment shaders take an [HSV color](https://en.wikipedia.org/wiki/HSL_and_HSV) as input call a `color_hsv2rgb` to convert it to RGB. But `color_hsv2rgb` isn't defined anywhere, so these shaders will not compile as-is.
+We have two vertex and fragment shader pairs: one will move vertices to the left, the other moves vertices to the right. Both fragment shaders take an [HSV color](https://en.wikipedia.org/wiki/HSL_and_HSV) as input and call a `color_hsv2rgb` to convert it to RGB. But `color_hsv2rgb` isn't defined anywhere, so these shaders will not compile as-is.
 
 We define `color_hsv2rgb` in a shader module:
 
@@ -73,7 +73,7 @@ const colorModule = {
 
 Shader modules are simply JavaScript objects that contain at least a name and some shader code. They can be defined to inject code into the vertex shader, the fragment shader or both. Our `colorModule` defines the `color_hsv2rgb` function used by our fragment shaders. It converts the HSV value to RGB and returns it. We're applying a shader module best practice of prefixing our function with the module name (`color_`) to avoid name collisions.
 
-In the `onInitialize` method of our `AnimationLoop`, we create two models with different vertex and fragment shader sources, but both including the our `colorModule`.
+In the `onInitialize` method of our `AnimationLoop`, we create two models with different vertex and fragment shader sources, but both including our `colorModule`.
 
 ```typescript
   override onInitialize({device}) {
@@ -123,7 +123,7 @@ In `onRender`, we simply draw both models:
   }
 ```
 
-If all went well, a blue trangle and a red triangle should be drawn side-by-side on the canvas.
+If all went well, a blue triangle and a red triangle should be drawn side-by-side on the canvas.
 
 Shader modules allowed us to define our HSL to RGB conversion function once and use it across multiple programs.
 

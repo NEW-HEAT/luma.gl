@@ -3,7 +3,7 @@
 ## Why GPU Debugging can be hard
 
 Debugging GPU code can be challenging. Standard CPU-side debugging tools like 
-breakpoints and single stepping are not available in GPU shaders.  when shaders fail, the result is often a blank screen that does not provide much information about what went wrong. 
+breakpoints and single stepping are not available in GPU shaders. When shaders fail, the result is often a blank screen that does not provide much information about what went wrong. 
 In addition, the error behind a failed render can be located in very different parts of the code:
 - it can be in the shader code itself
 - but it can also be in the data that was provided to the GPU (attributes, bindings, uniforms etc)
@@ -86,7 +86,7 @@ luma.log.level=1
 
 ## Shader compilation errors
 
-luma.gl extract as much information as possible about shader compiler errors etc, 
+luma.gl extracts as much information as possible about shader compiler errors etc, 
 and will throw exceptions with messages intended to help narrow down the problematic shader code when a shader fails to compile. 
 
 When running in the browser, luma.gl will open a shader source code viewer window inside the application's canvas.
@@ -97,7 +97,7 @@ the debug window to always appear.
 
 Note that luma.gl also injects and parses `glslify`-style `#define SHADER_NAME` "shader names". 
 Naming shaders directly in the shader code can help identify which 
-shader is involved when debugging shader parsing errors occur.
+shader is involved when shader parsing errors occur.
 
 ## Buffer data inspection
 

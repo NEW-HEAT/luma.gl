@@ -103,7 +103,7 @@ The `onInitialize` method of our `AnimationLoop` will be somewhat different from
   }
 ```
 
-The shader hook definition is the function signature with a prefix indicating whether it is intended for the vertex shader (`vs`) or fragment shader (`fs`). Shader hooks are always `void` funtions so they must return values to the caller via `out` or `inout` argurments. The rest of `onInitialize` is similar to what we've seen before with the exception of using the new shader modules and the `PipelineFactory` to create our `Model`s:
+The shader hook definition is the function signature with a prefix indicating whether it is intended for the vertex shader (`vs`) or fragment shader (`fs`). Shader hooks are always `void` functions so they must return values to the caller via `out` or `inout` arguments. The rest of `onInitialize` is similar to what we've seen before with the exception of using the new shader modules and the `PipelineFactory` to create our `Model`s:
 
 ```typescript
   override onInitialize({gl}) {
@@ -148,7 +148,7 @@ The shader hook definition is the function signature with a prefix indicating wh
   }
 ```
 
-The `onRender` method is the same as before. If all went well, a blue trangle and a red triangle should be drawn side-by-side on the canvas. The code injected by the modules into the shader hook is what offsets each triangle to the left or right.
+The `onRender` method is the same as before. If all went well, a blue triangle and a red triangle should be drawn side-by-side on the canvas. The code injected by the modules into the shader hook is what offsets each triangle to the left or right.
 
 Shader hooks allowed us to define our vertex and fragment shaders once and modify their behavior based on the shader module included.
 

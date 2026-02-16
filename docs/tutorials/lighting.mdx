@@ -26,7 +26,7 @@ The `phongLighting` shader module adds functions to our fragment shader to facil
 
 We'll modify our shaders to perform our lighting calculations in the following ways:
 
-- We'll input the surface `normals` as an in.
+- We'll input the surface `normals` as an input.
 - We'll pass the world positions and normals to the fragment shader.
 - We'll call `lighting_getLightColor`, which will be added to our fragment shader by the `phongLighting` module, to calculate the final fragment color.
 

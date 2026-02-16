@@ -44,7 +44,7 @@ Production quality WebGPU backend
 
 **@luma.gl/gltf**
 
-- glTF and PRB now supported on WebGPU (in progress)
+- glTF and PBR now supported on WebGPU (in progress)
 
 ## Version 9.1
 
@@ -94,7 +94,7 @@ Enhanced WebGPU support.
 - `makeAnimationLoopTemplate`
   - Accepts a new `.adapters` prop. (Avoids need for global registration of adapters).
 - `AsyncTexture`](/docs/api-reference/engine/async-texture)
-  - New class allows that applications to work withcreate textures from a Promise.
+  - New class that allows applications to create textures from a Promise.
 - `ShaderPassRenderer`
   - New class that helps applications apply a `ShaderPass` list to a texture.
 
@@ -155,7 +155,7 @@ On the upside this means that all features requiring WebGL 2 are now available a
 | Module                     | Impact            | Description                                                                                                     |
 | -------------------------- | ----------------- | --------------------------------------------------------------------------------------------------------------- |
 | **`@luma.gl/core`**        | New API           | The new portable luma.gl GPU API. Applications can run on both WebGPU and WebGL2 devices.                       |
-| **`@luma.gl/engine`**      | Light API updates | Classic luma.gl engine classes ()`Model`, `AnimationLoop` etc), which work portably on both WebGPU and WebGL 2. |
+| **`@luma.gl/engine`**      | Light API updates | Classic luma.gl engine classes (`Model`, `AnimationLoop` etc), which work portably on both WebGPU and WebGL 2. |
 | **`@luma.gl/gltf`**        | Renamed module    | New module that exports the glTF classes (moved from `@luma.gl/experimental`).                                  |
 | **`@luma.gl/shadertools`** | Light API updates | The shader assembler API and the shader module library.                                                         |
 | **`@luma.gl/webgl`**       | WebGL backend     | Optional "GPU backend module". Importing this module enables the application to create WebGL 2 `Device`s.       |
