@@ -32,7 +32,7 @@ Properties for a Shader
 
 ## Members
 
-- `device`: `Device` - holds a reference to the
+- `device`: `Device` - holds a reference to the `Device` that created this `Shader`.
 - `handle`: `unknown` - holds the underlying WebGL or WebGPU shader object
 - `props`: `ShaderProps` - holds a copy of the `ShaderProps` used to create this `Shader`.
 

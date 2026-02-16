@@ -22,7 +22,7 @@ Note that the allowed combinations are very limited, especially in WebGPU.
 
 | Usage Flag             | Value  | Description                                              |
 | ---------------------- | ------ | -------------------------------------------------------- |
-| `Buffer.INDEX`         | 0x0010 | An index buffer (array of 16 or 32 bit unsigned integers |
+| `Buffer.INDEX`         | 0x0010 | An index buffer (array of 16 or 32 bit unsigned integers) |
 | `Buffer.VERTEX`        | 0x0020 | A vertex buffer (a binary column)                        |
 | `Buffer.UNIFORM`       | 0x0040 | A uniform buffer                                         |
 | `Buffer.STORAGE`       | 0x0080 | A storage buffer                                         |
@@ -36,7 +36,7 @@ Note that the allowed combinations are very limited, especially in WebGPU.
 ## Members
 
 - `device`: `Device` - holds a reference to the `Device` that created this `Buffer`.
-- `handle`: `unknown` - holds the underlying WebGL or WebGPU shader object
+- `handle`: `unknown` - holds the underlying WebGL or WebGPU buffer object
 - `props`: `BufferProps` - holds a copy of the `BufferProps` used to create this `Buffer`.
 
 ## Methods

@@ -2,11 +2,11 @@
 
 ![WebGPU not supported](https://img.shields.io/badge/webgpu-no-red.svg?style=flat-square")
 
-> NOTICE: `TransformFeedback` is only available in WebGL 2. It is not recommend for applications to use these objects directly. See the `BufferTransform` class.
+> NOTICE: `TransformFeedback` is only available in WebGL 2. It is not recommended for applications to use these objects directly. See the `BufferTransform` class.
 
 `TransformFeedback` objects hold state needed to perform [WebGLTransformFeedback](https://developer.mozilla.org/en-US/docs/Web/API/WebGLTransformFeedback) operations, which capture the output of a vertex shader to varyings in a buffer. Each `TransformFeedback` object holds buffer bindings used to store output, allowing applications to switch between different `TransformFeedback` objects and update bindings, similar to how `VertexArrayObjects` hold input vertex buffers.
 
-`TransformFeedback` objects must assigned to a `Model` with the appropriate varyings. Some caveats apply, see [remarks](#remarks).
+`TransformFeedback` objects must be assigned to a `Model` with the appropriate varyings. Some caveats apply, see [remarks](#remarks).
 
 When using transform feedback, it is usually desirable to turn off rasterization to prevent the fragment shader from running unnecessarily. This can be achieved by setting the `discard: true` option when creating a render pipeline.
 
@@ -114,7 +114,7 @@ Activates transform feedback using the buffer bindings in this `TransformFeedbac
 Notes:
 
 - Buffers can not be accessed until `TransformFeedback.end` or `TransformFeedback.pause` have been called.
-- Buffers can not be changed until `TransformFeedback.end` or has been called, which includes doing anything which reads from or writes to any part of these buffers (outside of feedback writes, of course, or reallocating storage for any of these buffers).
+- Buffers cannot be changed until `TransformFeedback.end` has been called, which includes doing anything which reads from or writes to any part of these buffers (outside of feedback writes, of course, or reallocating storage for any of these buffers).
 
 WebGL APIs [`gl.beginTransformFeedback`](https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/beginTransformFeedback)
 

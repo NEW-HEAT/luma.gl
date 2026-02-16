@@ -57,7 +57,7 @@ const computedData = new Int32Array(await workBuffer.readAsync());
 ## Members
 
 - `device`: `Device` - holds a reference to the `Device` that created this `ComputePass`.
-- `handle`: `unknown` - holds the underlying WebGL or WebGPU shader object
+- `handle`: `unknown` - holds the underlying WebGL or WebGPU compute pass object
 - `props`: `ComputePassProps` - holds a copy of the `ComputePassProps` used to create this `ComputePass`.
 
 ## Methods
@@ -68,7 +68,7 @@ const computedData = new Int32Array(await workBuffer.readAsync());
 
 ### `endPass(): void`
 
-Free up any GPU resources associated with this render pass.
+Free up any GPU resources associated with this compute pass.
 
 ### `pushDebugGroup(groupLabel: string): void`
 

@@ -66,7 +66,7 @@ If no value for the `viewport` parameter is provided, the following defaults wil
 | `storeOp`?           | `'store'`, `'discard'` | `'store'`      | The store operation to perform on texture after executing the render pass. Default: 'store'.              |
 | `depthClearValue`?   | `number`               | `1`            | Value to clear depth component to prior to executing the render pass, if depthLoadOp is "clear". 0.0-1.0. |
 | `depthLoadOp`?       | `'load'`, `'clear'`    |                | Load operation to perform on depth component prior to executing the render pass. Default 'clear'.         |
-| `depthStoreOp`?      | `'store'`, `'discard'` |                | Store operation` to perform on depth component after executing the render pass. Default 'store'.          |
+| `depthStoreOp`?      | `'store'`, `'discard'` |                | Store operation to perform on depth component after executing the render pass. Default 'store'.           |
 | `depthReadOnly`?     | `boolean`              |                | Depth component is read only.                                                                             |
 | `stencilClearValue`? | `number `              |                | Value to clear stencil component to prior to executing the render pass, if stencilLoadOp is "clear".      |
 | `stencilLoadOp`?     | `'clear'`, `'load'`    |                | Load operation to perform on stencil component prior to executing the render pass. Prefer clearing.       |
@@ -80,7 +80,7 @@ If no value for the `viewport` parameter is provided, the following defaults wil
 ## Members
 
 - `device`: `Device` - holds a reference to the `Device` that created this `RenderPass`.
-- `handle`: `unknown` - holds the underlying WebGL or WebGPU shader object
+- `handle`: `unknown` - holds the underlying WebGL or WebGPU render pass object
 - `props`: `RenderPassProps` - holds a copy of the `RenderPassProps` used to create this `RenderPass`.
 
 ## Methods

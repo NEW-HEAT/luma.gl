@@ -1,6 +1,6 @@
 # RenderPipeline
 
-A `RenderPipeline` contains a matched pair of vertex and fragment [shaders](/docs/api-reference/core/resources/shader) that can be exectued on the GPU by calling `RenderPipeline.draw()`. handle compilation and linking of shaders, and store uniform values. They provide `draw` call which allows the application to run the shaders on specified input data.
+A `RenderPipeline` contains a matched pair of vertex and fragment [shaders](/docs/api-reference/core/resources/shader) that can be executed on the GPU by calling `RenderPipeline.draw()`. They handle compilation and linking of shaders, and store uniform values. They provide a `draw` call which allows the application to run the shaders on specified input data.
 
 A RenderPipeline controls the vertex and fragment shader stages, and can be used in GPURenderPassEncoder as well as GPURenderBundleEncoder.
 
@@ -13,12 +13,12 @@ Render pipeline inputs are:
 
 Render pipeline outputs are:
 - buffer bindings with a type of "storage"
-- storageTexture bindings with a access of "write-only"
+- storageTexture bindings with an access of "write-only"
 - the color attachments, described by Framebuffer
 - the depth-stencil optional attachment, described by Framebuffer
 
 A render pipeline is comprised of the following render stages:
-- Vertex fetch, from the buffers buffers
+- Vertex fetch, from the buffers
 - Vertex shader, props.vs
 - Primitive assembly, controlled by
 - Rasterization controlled by parameters (GPUPrimitiveState, GPUDepthStencilState, and GPUMultisampleState)
@@ -83,7 +83,7 @@ const pipeline = device.createRenderPipeline({vs, fs, varyings: ['gl_Position']}
 | `vertexEntryPoint?`  | `string`                   | -       | No       | Vertex shader entry point (defaults to 'main'). WGSL only                |
 | `vsConstants?`   | `Record<string, number>`   |         | No       | Constants to apply to compiled vertex shader (WGSL only)                 |
 | `fs?`            | `Shader`                   | `null`  | No       | Compiled fragment shader                                                 |
-| `fragmentEntryPoint?`  | `stringy`                  |         | No       | Fragment shader entry point (defaults to 'main'). WGSL only              |
+| `fragmentEntryPoint?`  | `string`                   |         | No       | Fragment shader entry point (defaults to 'main'). WGSL only              |
 | `fsConstants?`   | ` Record<string, number>`  |         | No       | Constants to apply to compiled fragment shader (WGSL only)               |
 | ShaderLayout     |
 | `topology?`      | `PrimitiveTopology;`       |         |          | Determines how vertices are read from the 'vertex' attributes            |
@@ -105,7 +105,7 @@ const pipeline = device.createRenderPipeline({vs, fs, varyings: ['gl_Position']}
 
 ### PrimitiveTopology
 
-Describes how primitives (points, lines or triangles) are formed from vertexes.
+Describes how primitives (points, lines or triangles) are formed from vertices.
 
 | Value                  | WebGL | WebGPU | Description                                                                                            |
 | ---------------------- | ----- | ------ | ------------------------------------------------------------------------------------------------------ |
@@ -119,9 +119,9 @@ Describes how primitives (points, lines or triangles) are formed from vertexes.
 ## Members
 
 - `id` : `String` - `id` string for debugging.
-- `device`: `Device` - holds a reference to the `Device` that created this `Buffer`.
+- `device`: `Device` - holds a reference to the `Device` that created this `RenderPipeline`.
 - `handle`: `unknown` - holds the underlying WebGL or WebGPU shader object
-- `props`: `BufferProps` - holds a copy of the `BufferProps` used to create this `Buffer`.
+- `props`: `RenderPipelineProps` - holds a copy of the `RenderPipelineProps` used to create this `RenderPipeline`.
 
 
 ## Methods
@@ -131,8 +131,6 @@ Describes how primitives (points, lines or triangles) are formed from vertexes.
 :::info
 `RenderPipeline` is an abstract class and cannot be instantiated directly. Create with `device.createRenderPipeline(...)`.
 :::
-
-Creates a new pipeline using the supplied vertex and fragment shaders. The shaders are compiled into WebGLShaders and is created and the shaders are linked.
 
 Creates a new pipeline using the supplied vertex and fragment shaders. The shaders are compiled into WebGLShaders and is created and the shaders are linked.
 
@@ -150,7 +148,7 @@ const pipeline = device.createRenderPipeline({
 });
 ```
 
-- `id` (`string`, optional) - string id (to help indentify the pipeline during debugging).
+- `id` (`string`, optional) - string id (to help identify the pipeline during debugging).
 - `vs` (`VertexShader`|`String`) - A vertex shader object, or source as a string.
 - `fs` (`FragmentShader`|`String`) - A fragment shader object, or source as a string.
 - `varyings` WebGL (`String[]`) - a list of names of varyings.
@@ -216,7 +214,7 @@ Notes:
 - Indexed rendering is used if the vertex array has an IndexBuffer set.
 - If a `TransformFeedback` object is supplied, `transformFeedback.begin()` and `transformFeedback.end()` will be called before and after the draw call.
 - A `Sampler` will only be bound if there is a matching Texture with the same key in the supplied `uniforms` object.
-- Once a uniform is set, it's size should not be changed. This is only a concern for array uniforms.
+- Once a uniform is set, its size should not be changed. This is only a concern for array uniforms.
 
 The following WebGL APIs are called in this function:
 
