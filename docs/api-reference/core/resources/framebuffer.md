@@ -123,7 +123,7 @@ This data loss is usually a non-issue as resizes are usually performed between r
 ### `colorAttachments`
 
 ```ts
-colorAttachments: TextureView)[]
+colorAttachments: (TextureView)[]
 ```
 
 Framebuffer attachments let the user specify the textures that will be used for a RenderPass, 
@@ -150,7 +150,7 @@ An application can render into an (HTML or offscreen) canvas by obtaining a
 
 ### destroy(): void
 
-Free up any GPU resources associated with this buffer immediately (instead of waiting for garbage collection).
+Free up any GPU resources associated with this framebuffer immediately (instead of waiting for garbage collection).
 
 TBD - When destroying `Framebuffer` will also destroy any `Texture` that was created automatically during Framebuffer creation. Supplied textures will not be destroyed (but will eventually be garbage collected and destroyed).
 

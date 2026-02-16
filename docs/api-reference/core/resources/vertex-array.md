@@ -30,7 +30,7 @@ const renderPipeline.setVertexArray(vertexArray);
 ## Members
 
 - `device`: `Device` - holds a reference to the `Device` that created this `VertexArray`.
-- `handle`: `unknown` - holds the underlying WebGL or WebGPU shader object
+- `handle`: `unknown` - holds the underlying WebGL or WebGPU vertex array object
 - `props`: `VertexArrayProps` - holds a copy of the `VertexArrayProps` used to create this `VertexArray`.
 
 ## Methods
@@ -45,7 +45,7 @@ const renderPipeline.setVertexArray(vertexArray);
 vertexArray.setIndexBuffer(location: number, buffer | null): void
 ```
 
-Note that the index buffer can be unbound by calling `vertexArray.setUb
+Note that the index buffer can be unbound by calling `vertexArray.setIndexBuffer(null)`.
 
 ### setBuffer(location: number): void
 

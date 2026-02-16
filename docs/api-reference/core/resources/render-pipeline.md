@@ -120,7 +120,7 @@ Describes how primitives (points, lines or triangles) are formed from vertices.
 
 - `id` : `String` - `id` string for debugging.
 - `device`: `Device` - holds a reference to the `Device` that created this `RenderPipeline`.
-- `handle`: `unknown` - holds the underlying WebGL or WebGPU shader object
+- `handle`: `unknown` - holds the underlying WebGL or WebGPU render pipeline object
 - `props`: `RenderPipelineProps` - holds a copy of the `RenderPipelineProps` used to create this `RenderPipeline`.
 
 
@@ -132,7 +132,7 @@ Describes how primitives (points, lines or triangles) are formed from vertices.
 `RenderPipeline` is an abstract class and cannot be instantiated directly. Create with `device.createRenderPipeline(...)`.
 :::
 
-Creates a new pipeline using the supplied vertex and fragment shaders. The shaders are compiled into WebGLShaders and is created and the shaders are linked.
+Creates a new pipeline using the supplied vertex and fragment shaders. The shaders are compiled into WebGLShaders and linked.
 
 ```ts
 const pipeline = device.createRenderPipeline(props: RenderProps);

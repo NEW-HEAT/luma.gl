@@ -28,7 +28,7 @@ Properties for a Shader
 | `sourceMap?`  | `string`                                               | WebGPU only                                    |
 | `language?`   | 'glsl' \| 'wgsl'                                       | wgsl in WebGPU only                            |
 | `entryPoint?` | `string`                                               | WGSL only, name of main function               |
-| `debug`       | `'error'` (default) `'never' \| 'warnings' \| 'always` | Will show a popup in the canvas with error log |
+| `debug`       | `'error'` (default) `'never' \| 'warnings' \| 'always'` | Will show a popup in the canvas with error log |
 
 ## Members
 

@@ -14,7 +14,7 @@ A command encoder offering GPU memory copying operations.
 ## Members
 
 - `device`: `Device` - holds a reference to the `Device` that created this `CommandEncoder`.
-- `handle`: `unknown` - holds the underlying WebGL or WebGPU shader object
+- `handle`: `unknown` - holds the underlying WebGL or WebGPU command encoder object
 - `props`: `CommandEncoderProps` - holds a copy of the `CommandEncoderProps` used to create this `CommandEncoder`.
 
 ## Methods

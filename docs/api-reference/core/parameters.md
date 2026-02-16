@@ -330,12 +330,12 @@ The following link provides more information on [color blending][color_blending]
 | ----------------------- | ------------------------------------------------------ | ---------------------------------------- |
 | `'zero'`                | `[0,0,0,0]`                                            |
 | `'one'`                 | `[1,1,1,1]`                                            |
-| `'src'`                 | RBGAsrc                                                |
+| `'src'`                 | RGBAsrc                                                |
 | `'one-minus-src'`       | 1 - RGBAsrc                                            |
 | `'src-alpha'`           | AAAAsrc                                                |
 | `'one-minus-src-alpha'` | 1 - AAAAsrc                                            |
-| `'dst'`                 | RBGAdst                                                |
-| `'one-minus-dst'`       | 1 - RBGAdst                                            |
+| `'dst'`                 | RGBAdst                                                |
+| `'one-minus-dst'`       | 1 - RGBAdst                                            |
 | `'dst-alpha'`           | AAAAdest                                               |
 | `'one-minus-dst-alpha'` | 1 - AAAAdst                                            |
 | `'src-alpha-saturated'` | [min(AS, 1 - AD), min(AS, 1 - AD), min(AS, 1 - AD), 1] |

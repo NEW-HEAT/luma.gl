@@ -42,7 +42,7 @@ const timestampQuery = device.createQuerySet({type: 'timestamp'}});
 | `occlusion`                              | `beginOcclusionQuery({conservative: true})`  | Same as above, but less accurate and faster                          | 
 | `transform-feedback` (Not yet supported) | `beginTransformFeedbackQuery()`              | Number of primitives that are written to transform feedback buffers.       |
 
-In addition to above queries, Query object also provides `getTimeStamp` which returns GPU time stamp at the time this query is executed by GPU. Two sets of these methods can be used to calculate time taken by GPU for a set of GL commands.
+In addition to the above queries, Query object also provides `getTimeStamp` which returns GPU time stamp at the time this query is executed by GPU. Two sets of these methods can be used to calculate time taken by GPU for a set of GL commands.
 
 ## DeviceFeatures
 

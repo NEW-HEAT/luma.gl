@@ -128,7 +128,7 @@ Controls how multiple mipmap levels can be consulted when texturing a pixel.
 
 Parameter: `compare`
 
-| `Value                 | Computed result                      |
+| Value                  | Computed result                      |
 | ---------------------- | ------------------------------------ |
 | `less-equal` (default) | result = 1.0 0.0, r \<\= D t r > D t |
 | `greater-equal`        | result = 1.0 0.0, r \>\= D t r < D t |
@@ -145,7 +145,7 @@ and the result of the comparison (`0` or `1`) is assigned to the red channel.
 ## Members
 
 - `device`: `Device` - holds a reference to the `Device` that created this `Sampler`.
-- `handle`: `unknown` - holds the underlying WebGL or WebGPU shader object
+- `handle`: `unknown` - holds the underlying WebGL or WebGPU sampler object
 - `props`: `SamplerProps` - holds a copy of the `SamplerProps` used to create this `Sampler`.
 
 ## Methods

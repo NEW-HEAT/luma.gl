@@ -22,7 +22,7 @@ that can work in both WebGL and WebGPU environments.
 ```typescript
 import {luma} from '@luma.gl/core';
 import {webgpuAdapter} from '@luma.gl/webgpu';
-import {webglAdapter} '@luma.gl/webgl';
+import {webglAdapter} from '@luma.gl/webgl';
 
 const webgpuDevice = luma.createDevice({type: 'best-available', adapters: [webgpuAdapter, webglAdapter], createCanvasContext: ...});
 ```

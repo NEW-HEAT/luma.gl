@@ -110,7 +110,7 @@ Note that the allowed combinations are very limited, especially in WebGPU.
 
 ## ExternalImage
 
-luma.gl allows texture data to be initialized from a number of different CPU object that hold an image.
+luma.gl allows texture data to be initialized from a number of different CPU objects that hold an image.
 These are referred to as external (to the GPU) images.
 
 | `Image` (`HTMLImageElement`)   | image will be used to fill the texture. width and height will be deduced.                             |
@@ -141,7 +141,7 @@ type TextureCubeFace = '+X' | '-X' | '+Y' | '-Y' | '+Z' | '-Z';
 A number of read only accessors are available:
 
 - `device`: `Device` - holds a reference to the `Device` that created this `Texture`.
-- `handle`: `unknown` - holds the underlying WebGL or WebGPU shader object
+- `handle`: `unknown` - holds the underlying WebGL or WebGPU texture object
 - `props`: `TextureProps` - holds a copy of the `TextureProps` used to create this `Texture`.
 
 - `width` - width of one face of the cube map
