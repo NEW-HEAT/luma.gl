@@ -1,6 +1,6 @@
 # CanvasContext
 
-A `CanvasContext` holds a connection between a GPU `Device` and canvas, (either an HTML `<canvas />` element, aka `HTMLCanvasELement`, or an `OffscreenCanvas`).
+A `CanvasContext` holds a connection between a GPU `Device` and canvas, (either an HTML `<canvas />` element, aka `HTMLCanvasElement`, or an `OffscreenCanvas`).
 
 - A `CanvasContext` enables the application to do GPU render into a canvas. 
 - The `CanvasContext` acts as a source of `Framebuffer`s with special `Texture` color attachments that are copied to the screen at the end of a `RenderPass`.
@@ -10,7 +10,7 @@ A `CanvasContext` holds a connection between a GPU `Device` and canvas, (either 
 
 ## Canvas Size Management
 
-While an `OffscreenCanvas` only has one size, `HTMLCanvasElements` effectively has three different sizes:
+While an `OffscreenCanvas` only has one size, `HTMLCanvasElement`s effectively have three different sizes:
 - The *CSS size*, being the size in "logical units" of the canvas
 - The *device pixel size*, being the exact number of "screen pixels" covered by the canvas
 - The *drawing buffer size*, representing the "hidden" system texture created to render into the canvas. 
@@ -19,7 +19,7 @@ While an `OffscreenCanvas` only has one size, `HTMLCanvasElements` effectively h
 Notes:
 - For best results, the drawing buffer should match the device pixel size. The `autoResizeDrawingBuffer` and `useDevicePixels` props will ensure this.
 - However, significant memory savings are possible by using say half resolution drawing buffers.
-- If the drawing buffer size doesn't exactly match the pixel size, undesired effects like moire patterns can result.The `CanvasContext` pixelWidth and pixelHeight members tracks the exact pixel size (called the "device pixel content box" in browser APIs) is surprisingly hard.
+- If the drawing buffer size doesn't exactly match the pixel size, undesired effects like moire patterns can result. The `CanvasContext` pixelWidth and pixelHeight members track the exact pixel size (called the "device pixel content box" in browser APIs), which is surprisingly hard.
 
 
 ## Canvas Monitoring
@@ -85,13 +85,13 @@ const renderPass = device.beginRenderPass({
 });
 ```
 
-On high-DPI screens, the number of pixels in a canvas can be a multiple of the "CSS size" reported by HTMLCanvasElement. Because of this, luma.gl allows the resolution of the textures returned by `canvasContext.getFramebuffer` to be controlled. The `CanvasContextProps.useDevicePixels` prop if set to `true`, multiples the canvas HTML size with the system device pixel ratio. This prop can also a custom ratio (`number`), as well. This allows setting the target texture size to higher or lower resolutions that indicated by an HMTLCanvasElements CSS width and height, to ensure that screen renderings use the maximum resolution of the device (at the cost of using more GPU memory).
+On high-DPI screens, the number of pixels in a canvas can be a multiple of the "CSS size" reported by HTMLCanvasElement. Because of this, luma.gl allows the resolution of the textures returned by `canvasContext.getFramebuffer` to be controlled. The `CanvasContextProps.useDevicePixels` prop if set to `true`, multiples the canvas HTML size with the system device pixel ratio. This prop can also a custom ratio (`number`), as well. This allows setting the target texture size to higher or lower resolutions than indicated by an HTMLCanvasElement's CSS width and height, to ensure that screen renderings use the maximum resolution of the device (at the cost of using more GPU memory).
 
 ```typescript
 const newCanvasContext = device.createCanvasContext({canvas: ..., useDevicePixels: true});
 ```
 
-Mote that when using high value (usually more than device pixel ratio), it is possible it can get clamped down outside of luma.gl's control due to system memory limitation, in such cases a warning will be logged to the browser console.
+Note that when using a high value (usually more than device pixel ratio), it is possible it can get clamped down outside of luma.gl's control due to system memory limitation, in such cases a warning will be logged to the browser console.
 
 The `CanvasContext` also provides methods for converting between device and CSS pixels, e.g
 
@@ -124,7 +124,7 @@ Whether the framebuffer backing this canvas context is auto resized using device
 
 ## Fields
 
-### `canvas: HMTLCanvas | OffscreenCanvas`
+### `canvas: HTMLCanvas | OffscreenCanvas`
 
 ### `initialized: Promise<void>`
 

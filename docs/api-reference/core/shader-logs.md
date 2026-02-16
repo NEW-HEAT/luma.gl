@@ -1,7 +1,7 @@
 # Shader Logs
 
-Shader compilation and linking logs contain important information about .
-luma.gl provides a single interface to 
+Shader compilation and linking logs contain important information about shader errors.
+luma.gl provides a single interface to these logs
 in the form of a compiler message type and an error log formatting function.
 
 ## Usage

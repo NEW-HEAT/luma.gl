@@ -11,11 +11,11 @@ All parameters listed in a single table
 | **Rasterization**           |
 | `cullMode`                  | `RenderPipeline`               | Which face to cull                                                   | **`'none'`**, `'front'`, `'back'` | `gl.cullFace()`            |
 | `frontFace`                 | `RenderPipeline`               | Which triangle winding order is front                                | **`ccw`**, `cw`                   | `gl.frontFace()`           |
-| `viewport`                  | `RenderPass.setParameters()`   | Specifying viewport size                                             |                                   | `gl.viewpot()`             |
+| `viewport`                  | `RenderPass.setParameters()`   | Specifying viewport size                                             |                                   | `gl.viewport()`            |
 | `scissor`                   | `RenderPass.setParameters()`   | Specifying scissor rect size                                         |                                   | `gl.scissor()`             |
 | `clearColor`                | `RenderPass(colorAttachments)` |                                                                      |                                   | `gl.clearColor()`          |
 | **Blending**                |
-| `blend`                     | `RenderPipeline(targets)`      | Enabled blending                                                     | `true`, `false`, `undefined`      | `gl.enable(GL.BLEND)`      |
+| `blend`                     | `RenderPipeline(targets)`      | Enable blending                                                     | `true`, `false`, `undefined`      | `gl.enable(GL.BLEND)`      |
 | `blendConstant`             |                                | Color used by blend factors `constant`, `one-minus-constant`         |
 | `blendColor`                | `RenderPass.setParameters()`   |
 | `blendEquation`             | `RenderPipeline(targets})`     |
@@ -41,14 +41,14 @@ All parameters listed in a single table
 | `polygonOffsetLine`         | `RenderPipeline`               | `polygon-mode-webgl`: Vertex used for flat shading. Requires         | `boolean`                         | `WEBGL_polygon_mode`       |
 | `clipDistance0` (`0-7`)     | `RenderPipeline`               | `shader-clip-cull-distance-webgl`: `gl_ClipDistance/gl_CullDistance` | `boolean`                         | `WEBGL_clip_cull_distance` |
 
-F## Other types of parameters
+## Other types of parameters
 
 Note that there are certain types of parameters affecting GPU operation that are not handled by the main parameter system:
 
 | Parameters    | Comments                                                                  |
 | ------------- | ------------------------------------------------------------------------- |
-| `Sampler`     | Describes how to sample from textures is controlled by `Sampler` objects. |
-| `Framebuffer` | luma.gl uses Framebuffer objects specify collections of render targets.   |
+| `Sampler`     | How to sample from textures is controlled by `Sampler` objects.          |
+| `Framebuffer` | luma.gl uses Framebuffer objects to specify collections of render targets.|
 
 
 [color_blending]: https://csawesome.runestone.academy/runestone/books/published/learnwebgl2/12_advanced_rendering/05_color_blending.html
@@ -174,7 +174,7 @@ The only parameters that can be changed at any time (using `renderPass.setParame
 
 ## Fixed RenderPass Parameters
 
-A `RenderPass` instance contains information about color and depth / stencil attachments as well as whether and how those attachments should be cleared be cleared (clear colors, values), whether fragment shader output should be discarded etc.
+A `RenderPass` instance contains information about color and depth / stencil attachments as well as whether and how those attachments should be cleared (clear colors, values), whether fragment shader output should be discarded etc.
 
 
 In luma.gl, the information about attachments (render targets) and clear colors etc is stored in `Framebuffer` objects. Thus, Framebuffer objects basically contain the parameters required to begin a new render pass, and `Framebuffer` objects can be reused repeatedly to create new `RenderPass` objects.
@@ -191,10 +191,10 @@ Note that there is no separate `clear` function in luma.gl. Instead attachments 
 | `discard?`              | `boolean[]`   | If `true`, does not store the result in the attached texture                                       |
 | `depthClearValue?`      | `number`      | Typically set to `0`. If not supplied, loads the value from the attached texture (less performant) |
 | `depthDiscard?`         | `boolean`     | If `true`, does not store the result in the attached texture                                       |
-| `depthReadonly?`        | `boolean`     | If `true`, indicated depth component is readonly                                                   |
+| `depthReadonly?`        | `boolean`     | If `true`, indicates depth component is readonly                                                   |
 | `stencilClearValue?`    | `number`      | Typically set to `0`. If not supplied, loads the value from the attached texture (less performant) |
 | `stencilDiscard?`       | `boolean`     | If `true`, does not store the result in the attached texture                                       |
-| `stencilReadonly?`      | `boolean`     | If `true`, indicated stencil component is readonly                                                 |
+| `stencilReadonly?`      | `boolean`     | If `true`, indicates stencil component is readonly                                                 |
 
 ## RenderPipeline Parameters
 
@@ -237,7 +237,7 @@ After the GPU completes stencil tests, depth tests and writes are performed. The
 
 ### Stencil Test
 
-After the fragment shader runs, optional stencil tests are performed, with resulting operations on the the stencil buffer.
+After the fragment shader runs, optional stencil tests are performed, with resulting operations on the stencil buffer.
 
 | Function                    | Type               | Default            | Description                            |
 | --------------------------- | ------------------ | ------------------ | -------------------------------------- |
@@ -286,7 +286,7 @@ Remarks:
 
 ### Color Targets
 
-A `RenderPipeline` requires information about each color attachments:
+A `RenderPipeline` requires information about each color attachment:
 
 | Target setting         | Type            | Default   | Description                                                |
 | ---------------------- | --------------- | --------- | ---------------------------------------------------------- |
@@ -316,7 +316,7 @@ The following link provides more information on [color blending][color_blending]
 
 [color_blending]: https://csawesome.runestone.academy/runestone/books/published/learnwebgl2/12_advanced_rendering/05_color_blending.html
 
-- `blendColor` The constant blend color referenced by `constant` and `one-minus-constant` can be changed at any time with with `RenderPass.setParameters({})`.
+- `blendColor` The constant blend color referenced by `constant` and `one-minus-constant` can be changed at any time with `RenderPass.setParameters({})`.
 
 | BlendOperation       | Output color                    | Visual effect                                                           |
 | -------------------- | ------------------------------- | ----------------------------------------------------------------------- |

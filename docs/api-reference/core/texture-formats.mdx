@@ -9,7 +9,7 @@ In luma.gl, texture formats are identified using string constants, and the `Text
 
 The following table lists all the texture formats constants supported by luma.gl (ordered by how many bytes each pixel occupies).
 
-Note that even though a GPU supports creating and sampling textures of a certain format, additional capabilities may need to be checked separatey, more information below the table.
+Note that even though a GPU supports creating and sampling textures of a certain format, additional capabilities may need to be checked separately, more information below the table.
 
 <DeviceTabs />
 
@@ -79,7 +79,7 @@ Note that even though a GPU supports creating and sampling textures of a certain
 | `stencil8`                            | <Ft f="stencil8" />                 | <L f="stencil8" />                 | <R f="stencil8" />                 | Platform dependent: Might use `depth24stencil8` with hidden depth.                                                      |
 | `depth16unorm`                        | <Ft f="depth16unorm" />             | <L f="depth16unorm" />             | <R f="depth16unorm" />             |                                                                                                                         |
 | `depth24plus`                         | <Ft f="depth24plus" />              | <L f="depth24plus" />              | <R f="depth24plus" />              | Platform dependent: Maps to "`depth24unorm`" or `depth32float`.                                                         |
-| `depth24plus-stencil81`               | <Ft f="depth24plus-stencil8" />     | <L f="depth24plus-stencil8" />     | <R f="depth24plus-stencil8" />     | Platform dependent: Maps to "`depth24unorm`" or `depth32float`.                                                         |
+| `depth24plus-stencil8`                | <Ft f="depth24plus-stencil8" />     | <L f="depth24plus-stencil8" />     | <R f="depth24plus-stencil8" />     | Platform dependent: Maps to "`depth24unorm`" or `depth32float`.                                                         |
 | `depth32float`                        | <Ft f="depth32float" />             | <L f="depth32float" />             | <R f="depth32float" />             | Higher precision than `depth24unorm` in representable range (0.0 to 1.0)                                                |
 | `depth32float-stencil8`               | <Ft f="depth32float-stencil8" />    | <L f="depth32float-stencil8" />    | <R f="depth32float-stencil8" />    | Platform dependent: Check via `depth32float-stencil8` feature.                                                          |
 | **`texture-compression-bc(5)`**       |                                     |                                    |                                    | _[S3 Texture Compression][s3tc_wiki], aka BC (Block Compression) using FourCC DXTn file identifiers. 4-6x compression._ |
@@ -179,8 +179,8 @@ Remarks
 - Mipmaps can only be auto created for formats that are both filterable and renderable.
 - A renderable format is either a color renderable format, or a depth-or-stencil format
 - All depth/stencil formats are renderable.
-- Samplers always read a "vec4" regardless of which texture format is used. For formats with less than 4 components, missing red, green and blue components in the texture format are read as `0.0`, alpha as `1.0`/
-- Note that some formats are not mandated by the base standard but represent additional capabilities (e.g. a WebGL2 device running on top of an OpenGL ES 3.2 driver). .
+- Samplers always read a "vec4" regardless of which texture format is used. For formats with less than 4 components, missing red, green and blue components in the texture format are read as `0.0`, alpha as `1.0`.
+- Note that some formats are not mandated by the base standard but represent additional capabilities (e.g. a WebGL2 device running on top of an OpenGL ES 3.2 driver).
 
 ## Texture Format Groups
 
@@ -247,14 +247,14 @@ and exactly the component types shown for that format, although it may not match
 | `GL.R11F_G11F_B10F`         | 3     | 32 bits  | [11 and 10 bit floating point colors](https://www.opengl.org/wiki/Small_Float_Formats)        |
 | `GL.RGB9_E5`                | 3     | 32 bits  | [14 bit floating point RGB, shared exponent](https://www.opengl.org/wiki/Small_Float_Formats) |
 | `GL.RGB16F`                 | 3     | 48 bits  | half float RGB                                                                                |
-| `GL.RGB32F`                 | 3     | 96 bits  | float RBG                                                                                     |
+| `GL.RGB32F`                 | 3     | 96 bits  | float RGB                                                                                     |
 | `GL.RGB8UI`                 | 3     | 24 bits  | unsigned integer 8 bit RGB: use `usampler`, no filtering                                      |
 | `GL.RGBA8`                  | 4     | 32 bits  | 8 bit RGBA, typically what `GL.RGBA` "resolves" to                                            |
-| `GL.SRGB_APLHA8` (EXT_sRGB) | 4     | 32 bits  | Color values are encoded to/decoded from sRGB before being written to/read from framebuffer   |
+| `GL.SRGB_ALPHA8` (EXT_sRGB) | 4     | 32 bits  | Color values are encoded to/decoded from sRGB before being written to/read from framebuffer   |
 | `GL.RGB5_A1`                | 4     | 16 bits  | 5 bit RGB, 1 bit alpha                                                                        |
 | `GL.RGBA4444`               | 4     | 16 bits  | 4 bit RGBA                                                                                    |
 | `GL.RGBA16F`                | 4     | 64 bits  | half float RGBA                                                                               |
-| `GL.RGBA32F`                | 4     | 128 bits | float RGA                                                                                     |
+| `GL.RGBA32F`                | 4     | 128 bits | float RGBA                                                                                    |
 | `GL.RGBA8UI`                | 4     | 32 bits  | unsigned integer 8 bit RGBA, `usampler`, no filtering                                         |
 
 ### Texture Component Type

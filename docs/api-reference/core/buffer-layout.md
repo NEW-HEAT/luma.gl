@@ -30,7 +30,7 @@ This is short hand for specifying an attribute with the same name as the buffer
   ]
 ```
 
-A more advanced use case is interleaving: two attributes access the same buffer sin an interleaved way.
+A more advanced use case is interleaving: two attributes access the same buffer in an interleaved way.
 Note that this introduces a buffer name that is different from attribute names. This buffer name can be specified in `setAttributes({[bufferName]: Buffer})` method on the `RenderPipeline` and `Model` classes.
 
 ```typescript
@@ -45,14 +45,14 @@ Note that this introduces a buffer name that is different from attribute names. 
   ],
 ```
 
-In the above case case a new buffer name `particles` is defined and `setAttributes({particles: Buffer})`
+In the above case a new buffer name `particles` is defined and `setAttributes({particles: Buffer})`
 calls will recognize that name and bind the provided buffer to all the interleaved attributes.
 
 ## `BufferLayout` Fields
 
 Each `BufferLayout` describes how the memory content of one buffer is mapped to one or more shader attributes, via the following fields:  
 
-- `name: string` defines the name of this buffer for use in `setAttributes()` methods. THe application is free to select this name.
+- `name: string` defines the name of this buffer for use in `setAttributes()` methods. The application is free to select this name.
 - `stepMode: 'vertex' | 'instance'` Whether attributes in this buffer will be treated as instanced. 
 - `byteStride?: number` the stride between elements in the buffer (default assumes a packed buffer)
 - `attributes?: BufferAttributeLayout[]` - A list of attributes that will be bound to this buffer.
