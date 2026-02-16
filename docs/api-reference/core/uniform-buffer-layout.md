@@ -113,5 +113,5 @@ Use the following WebGL types to declare uniforms corresponding to your GLSL dat
 
 ## Remarks
 
-- WebGL requires the data representing the uniforms in to be laid out in memory according to specific rules (essentially some padding needs to be injected between successive values to facilitate memory access by the GPU).
+- WebGL requires the data representing the uniforms to be laid out in memory according to specific rules (essentially some padding needs to be injected between successive values to facilitate memory access by the GPU).
 - More information on the `std140` layout specification: [OpenGL spec](https://khronos.org/registry/OpenGL/specs/gl/glspec45.core.pdf#page=137)

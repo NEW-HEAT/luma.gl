@@ -3,7 +3,7 @@ import {DeviceTabs, VFormat as Vf} from '@site/src/react-luma';
 # Vertex Formats
 
 The format of a vertex attribute indicates how data in a vertex buffer is laid out,
-and how it will exposed to the shader. Each format has a name that encodes
+and how it will be exposed to the shader. Each format has a name that encodes
 
 - the order of components
 - bits per component
@@ -75,7 +75,7 @@ Each vertex data type can map to any WGSL scalar type of the same base type, reg
 
 ## GPU Backend Differences
 
-luma.gl attempts to provide a consistent API across WebGPU and WebGL, but there are significant differences in vertex format supported across the two APIs.
+luma.gl attempts to provide a consistent API across WebGPU and WebGL, but there are significant differences in vertex formats supported across the two APIs.
 
 - The multi-component formats specify the number of components after "x".
 - **Mismatches in the number of components between the vertex format and shader type are allowed**, with components being either dropped or filled with default values to compensate.
@@ -102,7 +102,7 @@ Presumably, the heavy restrictions in WebGPU are motivated by:
 - additional optimizations during shader compilation
 - reduced run-time validation overhead
 
-In general, an argument can be made that in WebGPU / WGLS, attributes are less important
+In general, an argument can be made that in WebGPU / WGSL, attributes are less important
 since storage buffers are much more flexible, allowing arbitrary memory layouts, random access, and less limitations on number of bindings etc.
 Attributes **may** be faster than storage bindings, but at the moment there is no clear evidence that this is the case.
 

@@ -1,7 +1,7 @@
 # Bindings
 
 A key responsibility of any GPU API is to enable the application to
-set up data so that it can be accessed by shaders. in luma.b
+set up data so that it can be accessed by shaders in luma.gl.
 
 The terminology can be a little confusing. To make it easy to cross-reference other code and
 documentation, luma.gl attempts to roughly follow WebGPU / WGSL conventions. The following terms are used:

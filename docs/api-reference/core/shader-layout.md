@@ -1,6 +1,6 @@
 # ShaderLayout
 
-A `ShaderLayout` object describes the static structure a `RenderPipeline, "location" and structure of binding points of shaders,
+A `ShaderLayout` object describes the static structure of a `RenderPipeline`, "location" and structure of binding points of shaders,
  including attributes, bindings (textures, samplers, uniform buffers), and uniforms (under WebGL) and also lets the application
  assign a name to each binding point (typically matching the name used in the shader code).
 
@@ -70,7 +70,7 @@ const shaderLayout: ShaderLayout = {
 ### attributes
 
 The attributes field declares structural information about the shader pipeline.
-It contains  fixed information about each attribute such as its location (the index in the attribute bank, typically between 0-15) and whether the attribute is instanced.
+It contains fixed information about each attribute such as its location (the index in the attribute bank, typically between 0-15) and whether the attribute is instanced.
 
 ```typescript
   attributes:
@@ -99,7 +99,7 @@ and type are the key pieces of information that need to be provided.
 ```
 
 - `location: number` Compiled pipelines use small integer indices ("locations") to describe binding points (rather than string names). `ShaderLayout` assigns names to each attribute which allows applications to avoid keeping track of these location indices.
-- `type: 'texture' | 'sampler' | uniform'` The type of bind point (texture, sampler or uniform buffer). WebGPU requires separate bind points for textures and samplers.
+- `type: 'texture' | 'sampler' | 'uniform'` The type of bind point (texture, sampler or uniform buffer). WebGPU requires separate bind points for textures and samplers.
 
 
 ### uniforms
