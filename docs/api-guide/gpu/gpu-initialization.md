@@ -15,7 +15,7 @@ and of course performing draw and compute calls.
 ## Backend Adapters
 
 The `@luma.gl/core` API is not usable on its own. One or more GPU backend modules 
-must be also be imported from a corresponding GPU API backend module (`@luma.gl/webgpu` and/or `@luma.gl/webgl`). 
+must also be imported from a corresponding GPU API backend module (`@luma.gl/webgpu` and/or `@luma.gl/webgl`). 
 and provided when creating a `Device`.
 
 To create a WebGPU device:

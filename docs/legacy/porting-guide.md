@@ -40,9 +40,9 @@ While it is impossible for us to assess here how much work will be required for 
 
 The luma.gl v9 API is designed to provide portable WebGPU / WebGL 2 API, ground-up TypeScript support, and strong support for working with both WGSL and GLSL shaders.
 
-The new v9 GPU API is now an abstract Device API, meaning that the API itself is specified in terms of TypeScript interfaces and abstract classes that cannot be directly instantiates. Types such as `Buffer`, `Texture` etc can not be used on their own, but a subclass that implements the functionality of that class a specific GPU API must be requested from a Device (`WebGLBuffer`, `WebGPUTexture`). 
+The new v9 GPU API is now an abstract Device API, meaning that the API itself is specified in terms of TypeScript interfaces and abstract classes that cannot be directly instantiated. Types such as `Buffer`, `Texture` etc can not be used on their own, but a subclass that implements the functionality of that class a specific GPU API must be requested from a Device (`WebGLBuffer`, `WebGPUTexture`). 
 
-The new `Device` class provides the access point to the new GPU interface. It creates and instruments the WebGL context or the WebGPU adapter, and provides methods to create all the implementation classes (`WebGLDevice.createBuffer(... =>  WebGLBuffer`, `WebGPUDevice.createTexture(... =>  WebGLGPUTexture`)
+The new `Device` class provides the access point to the new GPU interface. It creates and instruments the WebGL context or the WebGPU adapter, and provides methods to create all the implementation classes (`WebGLDevice.createBuffer(... =>  WebGLBuffer`, `WebGPUDevice.createTexture(... =>  WebGPUTexture`)
 
 The new `CanvasContext` class handles context sizing, resolution etc.
 
@@ -82,7 +82,7 @@ This is based on the porting strategy used to port [deck.gl](https://deck.gl), w
 
 ### Step 2: Replace WebGLRenderingContext with Device
 
-The quickest way to start porting would be to start updating your application to consistently use the new `Device` class instead of directly working with .
+The quickest way to start porting would be to start updating your application to consistently use the new `Device` class instead of directly working with the `WebGLRenderingContext`.
 
 - **Feature Detection** - At the end of this stage it is also possible to replace feature detection constants with the new `device.features` functionality.
 
@@ -155,7 +155,7 @@ luma.gl v9 upgrades tooling and packaging to latest JavaScript ecosystem standar
 
 **`@luma.gl/webgl`**
 
-- While the webgl module still contains the WebGL 2 classes, these classes can no longer be imported directly. Instead the application should use `Device` create methods (`device.createBuffer()`, `device.createTexture()` etc to create these ojects in a portable way).
+- While the webgl module still contains the WebGL 2 classes, these classes can no longer be imported directly. Instead the application should use `Device` create methods (`device.createBuffer()`, `device.createTexture()` etc to create these objects in a portable way).
 
 **`@luma.gl/constants`** (INTERNAL)
 
@@ -370,7 +370,7 @@ TODO - this section needs updating
 - **Depth Bias** - Sometimes referred to as "polygon offset". Adds small offset to fragment depth values (by factor × DZ + r × units). Usually used as a heuristic to avoid z-fighting, but can also be used for effects like applying decals to surfaces, and for rendering solids with highlighted edges. The semantics of polygon offsets are loosely specified by the WebGL standard and results can thus be driver dependent.
 
 
-After the fragment shader runs, optional stencil tests are performed, with resulting operations on the the stencil buffer.
+After the fragment shader runs, optional stencil tests are performed, with resulting operations on the stencil buffer.
 
 | V8/WebGL Function           | Description                            | Values                         |                  |
 | --------------------------- | -------------------------------------- | ------------------------------ | ---------------- |

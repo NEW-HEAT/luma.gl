@@ -15,7 +15,7 @@
  - [WebGL 2 Fundamentals](https://webgl2fundamentals.org/) - Recommended if you are unfamiliar with how to draw with WebGL.
  - [WebGL 2 Specification](https://registry.khronos.org/webgl/specs/latest/2.0/)
  - [OpenGL ES 3.0 Specification](https://registry.khronos.org/OpenGL/specs/es/3.0/es_spec_3.0.pdf)
- - [GLSL ES 3.0 Specification](https://registry.khronos.org/OpenGL/specs/es/3.0/GLSL_ES_Specification_3.00.pdf
+ - [GLSL ES 3.0 Specification](https://registry.khronos.org/OpenGL/specs/es/3.0/GLSL_ES_Specification_3.00.pdf)
   
 ## glTF
 

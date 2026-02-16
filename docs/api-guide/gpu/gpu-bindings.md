@@ -7,7 +7,7 @@ luma.gl offers support for setting up ("binding") data required by the GPU durin
 
 ## Background
 
-A key responsibility of any GPU framework is to make enable the application to
+A key responsibility of any GPU framework is to enable the application to
 set up (or "bind") data so that it can be accessed by shader code running on the GPU. 
 
 Shaders contain declarations of external inputs such as attributes, uniform blocks, samplers etc.

@@ -12,7 +12,7 @@ The ability to copy memory between CPU, buffers and textures
 | `readBuffer (async)`  | ✅      | ❌ \*   | Read a buffer asynchronously                          |
 | `copyBufferToBuffer`  | ✅      | ✅      | Copy a buffer to another buffer without CPU roundtrip |
 | `copyBufferToTexture` | ✅      | ✅      | Copy a buffer to a texture without CPU roundtrip      |
-| `copyTextureToBuffer` | ✅      | ✅      | Copy a buffer to a texture without CPU roundtrip      |
+| `copyTextureToBuffer` | ✅      | ✅      | Copy a texture to a buffer without CPU roundtrip      |
 
 Remarks:
 - A WebGL extension does exist that enables asynchronous buffer reads, but it is not implemented on MacOS which is the primary development environment for luma.gl.

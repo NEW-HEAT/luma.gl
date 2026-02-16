@@ -1,7 +1,7 @@
 # Attributes
 
 :::info
-Note that while **attributes** is a structured and performant mechanism to provide columnar data to shaders that works on both WebGPU and WebGL, they are rather rigid and have a number of limitations. In WebGPU a more significantly more flexible approach is to use [storage buffers](./gpu-storage-buffers).
+Note that while **attributes** is a structured and performant mechanism to provide columnar data to shaders that works on both WebGPU and WebGL, they are rather rigid and have a number of limitations. In WebGPU a significantly more flexible approach is to use [storage buffers](./gpu-storage-buffers).
 :::
 
 The traditional 3D GPU execution model is that shaders work on vertexes, each vertex having a number of unique values such as position, normal, texture coordinates etc. 
@@ -39,7 +39,7 @@ will be interpreted and exposed to the shader. Each format has a name that encod
 the order of components, bits per component, and vertex data type for the component.
 The `VertexFormat` type is a string union of all the defined vertex formats.
 
-See the [VertexFormat reference](/docs/api-reference/core/vertex-formats) for information about which formats are available..
+See the [VertexFormat reference](/docs/api-reference/core/vertex-formats) for information about which formats are available.
 
 Note that [WebGPU](https://www.w3.org/TR/webgpu/#vertex-state) is more restrictive than WebGL in terms of supported data formats for vertex attributes.
 
@@ -62,7 +62,7 @@ contain the memory for multiple attributes, either in sequence, or interleaved.
 
 Attributes define binding points for memory arrays in the form of `Buffer`s. 
 
-The structure (memory layout and format) of these memory contained in these buffers.
+The structure (memory layout and format) of the memory contained in these buffers.
 must match the constraints imposed by the shader source code, 
 and the structure of the data in the buffers must also be communicated to the GPU.
 

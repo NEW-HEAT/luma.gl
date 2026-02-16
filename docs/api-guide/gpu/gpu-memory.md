@@ -21,12 +21,12 @@ In addition, this means that upload and download API is asynchronous which can a
 
 A GPU memory read or write may not always be completed immediately.
 
-GPUs executes its own commands queues independently from the CPU (the GPU and GPU driver may even optimize execution by rearranging order of operations). Therefore, to avoid unpredictable results, GPUs typically track the memory dependencies of each GPU operation, making sure that all preceding commands affecting a Buffer or Texture have completed in order before issuing e.g. a write or read. 
+A GPU executes its own command queues independently from the CPU (the GPU and GPU driver may even optimize execution by rearranging order of operations). Therefore, to avoid unpredictable results, GPUs typically track the memory dependencies of each GPU operation, making sure that all preceding commands affecting a Buffer or Texture have completed in order before issuing e.g. a write or read. 
 
 This is sometimes referred to as a read forcing a synchronization of the GPU.
 
 ## Synchronous Reads
 
-WebGL is plagued by a synchronous `Buffer` readout limitation. Not only does the CPU block while waiting for the computers DMA system to read out the memory from the GPU, it also forces a synchronization, meaning that now the GPU must complete any pending commands before the GPU gets control back and can continue execution.
+WebGL is plagued by a synchronous `Buffer` readout limitation. Not only does the CPU block while waiting for the computer's DMA system to read out the memory from the GPU, it also forces a synchronization, meaning that now the GPU must complete any pending commands before the GPU gets control back and can continue execution.
  
 Note that a WebGL extension does exist that enables asynchronous buffer reads, but it is not implemented on MacOS which is the primary development environment for luma.gl, so at the moment of writing it is not supported by luma.gl.

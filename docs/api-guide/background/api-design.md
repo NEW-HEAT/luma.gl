@@ -29,7 +29,7 @@ Accordingly the luma.gl `Device` API is designed to be similar to the WebGPU `De
 
 These similarities are intentional: 
 
-- The avoids creating a new abstraction layer that developers must learn. 
+- This avoids creating a new abstraction layer that developers must learn. 
 - Knowledge of the WebGPU API carries over to the luma.gl API and vice versa.
 - They allow the luma.gl WebGPU Device implementation to remain thin, ensuring optimal performance and minimal overhead.
 

@@ -1,7 +1,7 @@
 # Legacy What's New
 
 :::info
-This page contains release notes for older luma.gl releases (up through v8.5). For luma.gl v9, refer to the main [Whats' New](/docs/whats-new) page.
+This page contains release notes for older luma.gl releases (up through v8.5). For luma.gl v9, refer to the main [What's New](/docs/whats-new) page.
 :::
 
 ## Version 8.5
@@ -39,7 +39,7 @@ Date: March 2, 2020
 
 #### GPU-accelerated point-in-polygon tests
 
-The experimental `GPUPointInPolygon` class performs GPU-accerated point-in-polygon tests, which showed a massive improvement in performance over a CPU implementation of the algorithm:
+The experimental `GPUPointInPolygon` class performs GPU-accelerated point-in-polygon tests, which showed a massive improvement in performance over a CPU implementation of the algorithm:
 
 | Points | CPU   | GPU  | Improvement |
 | ------ | ----- | ---- | ----------- |
@@ -81,11 +81,11 @@ Stress tests were run on a Macbook Pro 2018, OSX, 2.6 GHz Intel Core i7, Radeon 
 
 #### Streamlined API
 
-luma.gl v8.0 also brings with it a major simplification of the API and streamlining of architecture. The number of modules as been reduced from 14 to 9, each with a clearly defined purpose and relationship to other modules:
+luma.gl v8.0 also brings with it a major simplification of the API and streamlining of architecture. The number of modules has been reduced from 14 to 9, each with a clearly defined purpose and relationship to other modules:
 
 - Low-level
   - **constants**: WebGL 1 and 2 enums.
-  - **gltools**: Tools for polyfilling, intrumenting and tracking state for WebGL contexts.
+  - **gltools**: Tools for polyfilling, instrumenting and tracking state for WebGL contexts.
   - **shadertools**: Tools for creating and composing re-usable GLSL shader modules.
 - Mid-level
   - **webgl**: WebGL 1 and 2 wrapper classes.
@@ -110,7 +110,7 @@ luma.gl introduces the `ProgramManager` class to manage caching and re-use of `P
 
 The `Model` class has been updated to take advantage of these new capabilities, automatically caching and re-using `Program`s where possible.
 
-The table below shows the effect of program sharing in deck.gl. The test renders 1000 [ScatterplotLayers](https://deck.gl/#/examples/core-layers/scatterplot-layer), each of which draws 100 intanced geometries, for a total of 1000 draw calls and 100,000 instances. Timings are milliseconds spent on the CPU and GPU to render a single frame on the following two machines:
+The table below shows the effect of program sharing in deck.gl. The test renders 1000 [ScatterplotLayers](https://deck.gl/#/examples/core-layers/scatterplot-layer), each of which draws 100 instanced geometries, for a total of 1000 draw calls and 100,000 instances. Timings are milliseconds spent on the CPU and GPU to render a single frame on the following two machines:
 
 - Macbook Pro 2018, OSX, 2.6 GHz Intel Core i7, Radeon Pro 560X 4 GB
 - Razer Blade, Windows 10, Intel i7-8750H 6 Core, Intel UHD Graphics 630
@@ -195,7 +195,7 @@ luma.gl can now load 3D models and scenegraphs in the popular [glTF™](https://
 
 #### loaders.gl Integration
 
-[loaders.gl](https://uber-web.github.io/loaders.gl/) is a major new companion framework to luma.gl that provides a suite of 3D file format loaders (with an emphasizis on point cloud formats), including:
+[loaders.gl](https://uber-web.github.io/loaders.gl/) is a major new companion framework to luma.gl that provides a suite of 3D file format loaders (with an emphasis on point cloud formats), including:
 
 - Draco
 - PLY
@@ -231,7 +231,7 @@ Extensive metrics about frame CPU and GPU times, resource counts, and GPU memory
 
 #### Interleaved Attributes
 
-To improve support for interleaved attributes and glTF model loading, accessor objecs and the `Accessor` class now support a `buffer` field. In addition, attribute setting functions now accept accessor objects with the `buffer` field set. This allows multiple accessor objects referencing the same buffer:
+To improve support for interleaved attributes and glTF model loading, accessor objects and the `Accessor` class now support a `buffer` field. In addition, attribute setting functions now accept accessor objects with the `buffer` field set. This allows multiple accessor objects referencing the same buffer:
 
 ```
 const buffer = // "interleaved" vertex attributes: 3 floats for position followed by 4 bytes for RGBA
@@ -259,7 +259,7 @@ Physically-Based Rendering is now supported and the new `PBRMaterial` class can 
 
 #### Copy and Blit methods
 
-Several member function of `Framebuffer` and `Texture` classes are now replaced by global methods that peform copying data to and from `Framebuffer` objects. All methods that read from or write to a `Framebuffer` object, can now also accept a `Texture` object.
+Several member function of `Framebuffer` and `Texture` classes are now replaced by global methods that perform copying data to and from `Framebuffer` objects. All methods that read from or write to a `Framebuffer` object, can now also accept a `Texture` object.
 
 ## Version 6.3
 
@@ -276,7 +276,7 @@ Uniforms are now cached at `Program` object, which improves performance by elimi
 
 #### Offscreen Rendering (Experimental)
 
-A new experimental class `AnimationLoopProxy` supports running an `AnimationLoop` on a worker thread using the `OffscreenCanvas` API made official in Chrome 70. For more detatils, see the [example app](https://github.com/visgl/luma.gl/tree/master/test/apps/wip/worker).
+A new experimental class `AnimationLoopProxy` supports running an `AnimationLoop` on a worker thread using the `OffscreenCanvas` API made official in Chrome 70. For more details, see the [example app](https://github.com/visgl/luma.gl/tree/master/test/apps/wip/worker).
 
 ## Version 6.2
 
@@ -336,7 +336,7 @@ luma.gl now provides a composable multipass rendering framework, based on a `Mul
 
 #### Post-Processing Effects (Experimental)
 
-A number of classic WebGL/OpenGL post processing effects have been ported to luma.gl and packaged as composable render passes. For maxiumum flexibility, many of the underlying shaders have also been exposed as shader modules, allowing filtering features to be used either directly in existing shaders or applied as a post-processing filter.
+A number of classic WebGL/OpenGL post processing effects have been ported to luma.gl and packaged as composable render passes. For maximum flexibility, many of the underlying shaders have also been exposed as shader modules, allowing filtering features to be used either directly in existing shaders or applied as a post-processing filter.
 
 #### New loaders.gl Submodule (Experimental)
 
@@ -383,7 +383,7 @@ A new method `Model.transform` makes it easier to run basic transform feedback o
 
 #### Transform class (WebGL 2)
 
-`Transform` is now an officially supported luma.gl class. This new class provides an easy-to-use interface to Transform Feedback. This class hides complexity by internally creating and managing the supporing WebGL objects that are necessary to perform Transform Feedback operations.
+`Transform` is now an officially supported luma.gl class. This new class provides an easy-to-use interface to Transform Feedback. This class hides complexity by internally creating and managing the supporting WebGL objects that are necessary to perform Transform Feedback operations.
 
 #### GLSL Transpilation
 
@@ -521,7 +521,7 @@ A major release that brings full WebGL 2 support to luma.gl, as well as adding s
 luma.gl now exposes the complete WebGL 2 APIs:
 
 - New classes expose all the new WebGL 2 objects (`Query`, `Texture3D`, and `TransformFeedback`), together with a new `UniformBufferLayout` helper class to make uniform buffers easy to use.
-- Other existing WebGL classes with new functionalites under WebGL 2 have been updated.
+- Other existing WebGL classes with new functionalities under WebGL 2 have been updated.
 - Add new WebGL 2 texture formats and types support, including floating point textures, and multiple render targets.
 
 #### WebGL Capability Management
@@ -533,7 +533,7 @@ luma.gl provides a single unified WebGL 2-style API across WebGL 2, WebGL 1 and 
 In this version, a new WebGL state management is implemented to help address one of the weak spots of the stateful WebGL API:
 
 - luma.gl can track certain WebGL context state changes so the app could easily set and reset WebGL states for certain operations.
-- luma.gl also has a host-side WebGL state caching system that records certain WebGL states so that expansive queries into the GPU or underlying OpenGL driver won't be necessary.
+- luma.gl also has a host-side WebGL state caching system that records certain WebGL states so that expensive queries into the GPU or underlying OpenGL driver won't be necessary.
 
 #### shadertools - A New Shader Module System
 
@@ -551,7 +551,7 @@ Significant reduction in the size of distributed luma.gl library
 
 - Code Size - luma.gl is continuously being tuned for code size.
 - Deprecated Code Removed - Removal of deprecated features to help reduce library size.
-- Tree Shaking support - special care have been taken to avoid so called "side effects" that defeat dependency analysis during tree shaking).
+- Tree Shaking support - special care has been taken to avoid so called "side effects" that defeat dependency analysis during tree shaking).
 
 ## Version 3.0
 

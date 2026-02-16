@@ -1,6 +1,6 @@
 # Shader Modules
 
-luma.device provides a shader module system (through the `@luma.device/shadertools` module) that allows you build modular shaders. The system is built around a shader "assembler", and addresses the lack of a module/import system in the GLSL and WGSL languages. The shader assembler allows you to import chunks of reusable shader code from separately defined shader fragments into your shader program source code, which allows you to organize your shader code in reusable modules.
+luma.gl provides a shader module system (through the `@luma.gl/shadertools` module) that allows you build modular shaders. The system is built around a shader "assembler", and addresses the lack of a module/import system in the GLSL and WGSL languages. The shader assembler allows you to import chunks of reusable shader code from separately defined shader fragments into your shader program source code, which allows you to organize your shader code in reusable modules.
 
 - Enables you to import and "inject" prepackaged modules of shader code into your shaders.
 - Allows you to package up reusable GLSL and/or WGSL code as shader modules.
@@ -42,7 +42,7 @@ assembleShaders(device, {..., modules: [MY_SHADER_MODULE]});
 
 ## Structure of a Shader Module
 
-The simplest shader modules just contain one or more reusable generic global GLSL / WGLS functions that can be included either in fragment or vertex shaders (or both). The shader assembles just adds the functions to the top of the assembled shader. The `fp64` module is an example of this type of module.
+The simplest shader modules just contain one or more reusable generic global GLSL / WGSL functions that can be included either in fragment or vertex shaders (or both). The shader assembler just adds the functions to the top of the assembled shader. The `fp64` module is an example of this type of module.
 
 More complex shader modules contain specific vertex and/or fragment shader "chunks". In this case the shader module defines vertex shader inputs and outputs requiring more sophisticated shader generation to wire up the inputs and outputs between shader stages.
 

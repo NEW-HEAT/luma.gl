@@ -162,7 +162,7 @@ Additions:
 
 #### Geometry
 
-The `Geometry` class has been simplified and is now a conceptually "immutable" class that holds typed arrays and accessor metatadata describing attributes for a geometry.
+The `Geometry` class has been simplified and is now a conceptually "immutable" class that holds typed arrays and accessor metadata describing attributes for a geometry.
 
 | Removal                                               | Replacement               | Reason for Change                 |
 | ----------------------------------------------------- | ------------------------- | --------------------------------- |
@@ -199,7 +199,7 @@ new AnimationLoop({
 });
 ```
 
-Note that setting `preserveDrawingBuffers` may result in a performance drop on some platforms.
+Note that setting `preserveDrawingBuffer` may result in a performance drop on some platforms.
 
 #### Query
 
@@ -343,7 +343,7 @@ Math functions were moved from luma.gl to the separate math.gl module in v4.1. A
 import {radians, degrees, Vector2, Vector3, Vector4, Matrix4} from '@math.gl/core';
 ```
 
-luma.gl v6.0 removes a number of previously deprecated symbols. luma.gl will now issue an error rather than a warning if the old usage is detecated.
+luma.gl v6.0 removes a number of previously deprecated symbols. luma.gl will now issue an error rather than a warning if the old usage is detected.
 
 #### Constants
 

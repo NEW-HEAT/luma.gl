@@ -23,7 +23,7 @@ If drawing to the screen, the application will instead need to create
 Finally, to perform that actual draw call, the application needs a 
 - A `RenderPipeline` using the shader code that will execute during the draw.
 
-_Note: setting up a "raw" `Renderpipeline` requires a substantial amount of boilerplace and setup. Instead most applications will typically use the `Model` class in `@luma.gl/engine` module to issue draw calls._
+_Note: setting up a "raw" `Renderpipeline` requires a substantial amount of boilerplate and setup. Instead most applications will typically use the `Model` class in `@luma.gl/engine` module to issue draw calls._
 
 
 ### Creating a Texture
@@ -45,7 +45,7 @@ A `Framebuffer` is a simple container object that holds textures that will be us
 - one or more color attachments
 - optionally, a depth, stencil or depth-stencil attachment 
 
-`Framebuffer` also provides a `resize` method makes it easy to efficiently resize all the attachments of a `Framebuffer` with a single method call.
+`Framebuffer` also provides a `resize` method that makes it easy to efficiently resize all the attachments of a `Framebuffer` with a single method call.
 
 `device.createFramebuffer` constructor enables the creation of a framebuffer with all attachments in a single step. 
 
@@ -70,9 +70,9 @@ at least one `CanvasContext` is required for rendering to the screen.
 
 A `CanvasContext` holds a connection between the GPU `Device` and an HTML or offscreen `canvas` (`HTMLCanvasElement` (or `OffscreenCanvas`)_ into which it can render.
 
-The most important method is `CanvasContext.getCurrentFramebuffer()` that is used to obtain fresh `Framebuffer` every render frame. This framebuffer contains a special texture `colorAttachment` that draws into to the canvas "drawing buffer" which will then be copied to the screen when then render pass ends.
+The most important method is `CanvasContext.getCurrentFramebuffer()` that is used to obtain fresh `Framebuffer` every render frame. This framebuffer contains a special texture `colorAttachment` that draws into the canvas "drawing buffer" which will then be copied to the screen when then render pass ends.
 
-While there are ways to obtain multiple `CanvasContext` instances on WebGPU, the recommended portable way (that also works on WebGL) is to create a "default canvas context" by supplying the `createCanvasContext` prop to your `luma.createDevice({..., createCanvasContext: true})` call. The created canvas contest is available via `device.getDefaultCanvasContext()`.
+While there are ways to obtain multiple `CanvasContext` instances on WebGPU, the recommended portable way (that also works on WebGL) is to create a "default canvas context" by supplying the `createCanvasContext` prop to your `luma.createDevice({..., createCanvasContext: true})` call. The created canvas context is available via `device.getDefaultCanvasContext()`.
 
 ### Creating a RenderPipeline
 
@@ -174,7 +174,7 @@ Depth and stencil buffers should normally also be cleared to default values:
 
 Clearing can be disabled by setting any of the clear properties to the string constant `'false'`. Instead of clearing before rendering, this loads the previous contents of the framebuffer.
 
-_Note: Clearing is normally be expected to be more performant than not clearing, as the latter requires the GPU to read in the previous content of texture while rendering._
+_Note: Clearing is normally expected to be more performant than not clearing, as the latter requires the GPU to read in the previous content of texture while rendering._
 
 ## Offscreen rendering
 
