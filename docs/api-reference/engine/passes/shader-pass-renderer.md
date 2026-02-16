@@ -1,6 +1,6 @@
 # ShaderPassRenderer
 
-A` ShaderPassRenderer` takes an source texture and applies a sequence of `ShaderPasses` and returns an output texture that can be rendered to the screen.
+A `ShaderPassRenderer` takes a source texture and applies a sequence of `ShaderPasses` and returns an output texture that can be rendered to the screen.
 
 The primary purpose is to run postprocessing effects on rendered contents.
 
@@ -49,6 +49,6 @@ resize(width: number, height: number);
 ```ts
 renderToTexture(options: {sourceTexture: AsyncTexture; uniforms; bindings}): Texture | null;
 ```
-A` ShaderPassRenderer` takes an source texture and applies a sequence of `ShaderPasses` and returns an output texture of the same size that can be rendered to the screen.
+A `ShaderPassRenderer` takes a source texture and applies a sequence of `ShaderPasses` and returns an output texture of the same size that can be rendered to the screen.
 
 Returns: the rendered `Texture` which can now be rendered to the screen, or `null` if the initial texture is an async texture that has not yet been loaded.

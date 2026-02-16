@@ -1,6 +1,6 @@
 # TextureTransform
 
-`TextureTransform` is responsible for managing resources and state required for reading from and/or writing to `Texture` objects. It auto creates `Texture` objects when requested, creates `Framebuffer` objects. Maintains all texture bindings, when swapping is eanbled, two binding objects are created for easy switching of all WebGL resource binginds.
+`TextureTransform` is responsible for managing resources and state required for reading from and/or writing to `Texture` objects. It auto creates `Texture` objects when requested, creates `Framebuffer` objects. Maintains all texture bindings, when swapping is enabled, two binding objects are created for easy switching of all WebGL resource bindings.
 
 NOTE: In following sections 'texture transform' is used to refer to 'reading from and/or writing to `Texture` objects'.
 
@@ -46,7 +46,7 @@ type TextureBinding = {
 - `device` - Device
 - `props.sourceTextures` (`Object`, Optional) - key and value pairs, where key is the name of vertex shader attribute and value is the corresponding `Texture` object.
 - `props.targetTexture` (`Texture`|`String`, Optional) - `props.Texture` object to which data to be written. When it is a `String`, it must be one of the source texture attributes name, a new texture object is cloned from it.
-- `props.targetTextureVarying` : varying name used in vertex shader who's data should go into target texture.
+- `props.targetTextureVarying` : varying name used in vertex shader whose data should go into target texture.
 - `props.swapTexture` : source texture attribute name, that is swapped with target texture every time `swap()` is called.
 - `props.fs`  - fragment shader string, when rendering to a texture, fragments can be processed using this custom shader, when not specified, pass through fragment shader will be used.
 
@@ -83,7 +83,7 @@ Returns current target texture object.
 
 Reads and returns data from current target texture.
 
-- `options.packed` (Boolean, Optional, Default: false) - When true, data is packed to the actual size varyings. When false return array contains 4 values (R, G, B and A) for each element. Un-used element value will be 0 for R, G and B and 1 for A channel.
+- `options.packed` (Boolean, Optional, Default: false) - When true, data is packed to the actual size varyings. When false return array contains 4 values (R, G, B and A) for each element. Unused element value will be 0 for R, G and B and 1 for A channel.
 
 ### getFramebuffer() : Framebuffer
 

@@ -4,7 +4,7 @@
 This page needs update for luma.gl v9
 :::
 
-The `Transform` class provides easy interface to perform Transform Feedback operations on given data. Applications can use this class to move data processing from CPU to GPU, where multiple parallel execution units will be used for processing. Data is handled in form of `Buffer` objects, i.e. data resides in the GPU memory. Output of this class can directly set as attributes on `Model` or `VertexArray` for regular rendering operations, CPU access is not required hence avoids expensive CPU and GPU sync.
+The `Transform` class provides an easy interface to perform Transform Feedback operations on given data. Applications can use this class to move data processing from CPU to GPU, where multiple parallel execution units will be used for processing. Data is handled in the form of `Buffer` objects, i.e. data resides in the GPU memory. Output of this class can be directly set as attributes on `Model` or `VertexArray` for regular rendering operations, CPU access is not required hence avoids expensive CPU and GPU sync.
 
 `Transform` class creates and holds `Model` and `TransformFeedback` instances.
 
@@ -87,7 +87,7 @@ bufferWithNewValues = transform.getBuffer('outValue');
 ...
 ```
 
-### Use case : Update one or more buffers using update() method..
+### Use case : Update one or more buffers using update() method.
 
 Once `Transform` object is constructed and used, one or more source or destination buffers can be updated using `update`.
 

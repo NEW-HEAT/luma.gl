@@ -63,7 +63,7 @@ Use to instantiate an `AnimationLoop` from an `AnimationLoopTemplate` subclass.
 makeAnimationLoop(AnimationLoopTemplateCtor: typeof AnimationLoopTemplate, props?: MakeAnimationLoopProps) : AnimationLoop
 ```
 
-- `props` - forwarded to the `AnimationLoop` constructor.  If no `device` is passed, `makeAimationLoop()` will create one using `type: 'best-available'`, using registered or supplied adaptors.
+- `props` - forwarded to the `AnimationLoop` constructor.  If no `device` is passed, `makeAnimationLoop()` will create one using `type: 'best-available'`, using registered or supplied adapters.
 
 ## Methods
 
@@ -74,10 +74,10 @@ The `AnimationLoopTemplate` class should not be constructed directly. Use the `m
 
 ### onFinalize
 
-The application overrides the `onFinalize`` method to destroy any (GPU) resources created in he constructor.
+The application overrides the `onFinalize` method to destroy any (GPU) resources created in the constructor.
 Parameters are identical to `AnimationLoopProp.onFinalize`.
 
 ### onRender
 
-The application overrides the `onFinalize`` method to render each frame.
+The application overrides the `onRender` method to render each frame.
 Parameters are identical to `AnimationLoopProp.onRender`.

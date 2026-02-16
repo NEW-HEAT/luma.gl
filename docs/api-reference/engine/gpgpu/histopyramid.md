@@ -1,6 +1,6 @@
 # Histopyramid
 
-`Histopyramid` aka `Histogram Pyramid` provides an efficient way of converting sparse matrix (represented by a texture) into list of coordinates (points). Where each active cell in the matrix can contribute to 1 or more points. All operations of the algorithm can be executed in parallel hence are performed on the GPU.
+`Histopyramid` aka `Histogram Pyramid` provides an efficient way of converting sparse matrix (represented by a texture) into a list of coordinates (points). Where each active cell in the matrix can contribute to 1 or more points. All operations of the algorithm can be executed in parallel hence are performed on the GPU.
 
 Following set of methods implement `Histopyramid` operations as described in `High‐speed marching cubes using histopyramids` by `Dyken C`, `Ziegler G`, `Theobalt C` and `Seidel H`
 Link to the paper: http://olmozavala.com/Custom/OpenGL/Tutorials/OpenGL4_Examples/MarchingCubes_Dyken/Dyken_et_al-2008-Computer_Graphics_Forum.pdf
@@ -24,7 +24,7 @@ Returns an object with following fields.
 
 ### getHistoPyramid(gl : WebGLRenderingContext, opts : Object) : Object
 
-Takes an input texture, and builds all levels of histogram pyramid. All levels are RGBA textues, where each pixels packs 4 weights of a 2X2 texture region.
+Takes an input texture, and builds all levels of histogram pyramid. All levels are RGBA textures, where each pixels packs 4 weights of a 2X2 texture region.
 
 - `gl` - WebGL context.
 - `opts` (`Object`={}) - options
@@ -49,4 +49,4 @@ Takes an input texture, and generates a `Buffer` object with list of points that
 
 Returns an object with following fields.
 
-- `locationAndIndexBuffer` (`Buffer`): `Buffer` object contains coordinate data of generated points. Each point is represented 4 floats (XYZW). Where `X` contains x coordinate, `Y` contains y coordinate and `Z` contains local key-index and `W` contains key-index. x and y coordiantes of the point are with in ((0,0) to (width, height)] range, where `width` and `height` are dimensions of source texture object.
+- `locationAndIndexBuffer` (`Buffer`): `Buffer` object contains coordinate data of generated points. Each point is represented 4 floats (XYZW). Where `X` contains x coordinate, `Y` contains y coordinate and `Z` contains local key-index and `W` contains key-index. x and y coordinates of the point are within ((0,0) to (width, height)] range, where `width` and `height` are dimensions of source texture object.

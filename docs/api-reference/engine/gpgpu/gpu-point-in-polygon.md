@@ -1,6 +1,6 @@
 # GPUPointInPolygon
 
-`GPUPointInPolygon` provides GPU accelerated PIP (Point-In-Polygon) testing functionality. A given set of 2D points and one or more 2D polygons, it computes, whether each point is inside or outside of any polygon.
+`GPUPointInPolygon` provides GPU accelerated PIP (Point-In-Polygon) testing functionality. Given a set of 2D points and one or more 2D polygons, it computes whether each point is inside or outside of any polygon.
 
 ## Sample Usage
 
@@ -32,7 +32,7 @@ gpuPointInPolygon.filter({positionBuffer, filterValueIndexBuffer, count});
 const results = filterValueIndexBuffer.getData();
 
 // results array contains 2 elements (filterValue, index) for each point, where
-// `filterValue` is '-1' if point in outside of polygons, otherwise index of the polygon in which it lies
+// `filterValue` is '-1' if point is outside of polygons, otherwise index of the polygon in which it lies
 // `index` is the point index in `positionBuffer`
 ```
 
@@ -75,7 +75,7 @@ NOTE: Index of a polygon in `opts.polygons` array is its id, and it is used to i
 - `opts.positionBuffer` (`Buffer`) - Buffer object containing X, Y position of input points.
 - `opts.count` (`Number`) - Number of points to be processed.
 - `opts.filterValueIndexBuffer` (`Buffer`) - Buffer object to hold results for each input point. After the method is executed, this buffer contains two floats `filterValue` and `index` for each input point, where :
-  - `filterValue` is '-1' if point in outside of polygons, else index of the polygon in which it lies
+  - `filterValue` is '-1' if point is outside of polygons, else index of the polygon in which it lies
   - `index` is the point index in `positionBuffer`
 
 NOTE: If a point lies in the region that is overlapped by 2 or more polygons, `filterValue` will be index of one of the polygons.

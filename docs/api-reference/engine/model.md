@@ -13,7 +13,7 @@ The `Model` class is the centerpiece of the luma.gl API. It brings together all 
 
 The `Model` class integrates:
 - The `@luma.gl/shadertools` shader module system: [see `Shader Assembly`]( /docs/api-reference/shadertools/shader-assembler).
-- `ShaderInputs` for uniform and binding managment.
+- `ShaderInputs` for uniform and binding management.
 - The `Geometry` classes - accepts a [`Mesh`] or a [`Geometry`](/docs/api-reference/engine/geometry) instance, plus any additional attributes for instanced rendering)
 
 ## Usage
@@ -22,7 +22,7 @@ The `Model` class integrates:
 import {Model} from `@luma.gl/engine`;
 ```
 
-One of the simplest way to provide attribute data is by using a Geometry object.
+One of the simplest ways to provide attribute data is by using a Geometry object.
 
 Create model object by passing shaders, uniforms, geometry and render it by passing updated uniforms.
 
@@ -92,7 +92,7 @@ const model = new Model(device, {
 | `shaderInputs?`    | `ShaderInputs`                                 | Pre-created, typed shaderInputs.                                                  |
 | `onBeforeRender?`  | `Function`                                     | function to be called before every time this model is drawn.                      |
 | `onAfterRender?`   | `Function`                                     | function to be called after every time this model is drawn.                       |
-| `debugShaders?`    | `'error' \| 'never' \| 'warnings' \| 'always'` | Specify in what triggers the display shader compilation log (default: `'error'`). |
+| `debugShaders?`    | `'error' \| 'never' \| 'warnings' \| 'always'` | Specify what triggers the display shader compilation log (default: `'error'`). |
 
 Less commonly used properties:
 
@@ -162,7 +162,7 @@ model.draw({
 `Model.draw()` calls `Program.draw()` but adds and extends the available parameters as follows:
 
 - `moduleSettings`=`null` (Object) - any uniforms needed by shader modules.
-- `attributes`=`{}` (Object) - attribute definitions to be used for drawing. In additions to `Buffer` and constant values, `Model`s can also accept typed arrays and attribute descriptor objects which it converts to buffers.
+- `attributes`=`{}` (Object) - attribute definitions to be used for drawing. In addition to `Buffer` and constant values, `Model`s can also accept typed arrays and attribute descriptor objects which it converts to buffers.
 - `uniforms`=`{}` (Object) - uniform values to be used for drawing. In addition to normal uniform values, `Model` can also accept function valued uniforms which will be evaluated before every draw call.
 - `animationProps` (Object) - if any function valued uniforms are set on the `Model`, `animationProps` must be provided to the draw call. The `animationProps` are passed as parameter to the uniform functions.
 
@@ -172,7 +172,7 @@ The remaining draw options are passed directly to `Program.draw()`:
 - `samplers`=`{}` (Object) - texture mappings to be used for drawing.
 - `parameters`=`{}` (Object) - temporary gl settings to be applied to this draw call.
 - `framebuffer`=`null` (`Framebuffer`) - if provided, renders into the supplied framebuffer, otherwise renders to the default framebuffer.
-- `transformFeedback` - an instance `TranformFeedback` object, that gets activated for this rendering.
+- `transformFeedback` - an instance of `TransformFeedback` object, that gets activated for this rendering.
 - `vertexArray` - an instance of `VertexArray` object, that holds required buffer bindings for vertex shader inputs.
 
 Returns

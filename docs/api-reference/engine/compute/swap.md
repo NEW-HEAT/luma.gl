@@ -1,6 +1,6 @@
 # Swap
 
-`Swap` is a helper class to support buffer and texture management when doing repeated transformations or computations on a block of data (memory). `Swap` enables a sequence of repeated / successive data transformations to be run by reusing just two resources (two buffers or two textures), effectively supporting a simple double buffering techniques.
+`Swap` is a helper class to support buffer and texture management when doing repeated transformations or computations on a block of data (memory). `Swap` enables a sequence of repeated / successive data transformations to be run by reusing just two resources (two buffers or two textures), effectively supporting a simple double buffering technique.
 
 `Swap` is primarily intended to manage pairs of GPU memory resources, such as
 - a pair of GPU buffers (`Swap<Buffer>`)
