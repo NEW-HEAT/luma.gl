@@ -1,17 +1,17 @@
 # GroupNode
 
-A `GroupNode` is a subclass of `ScenegraphNode` that holds a list of `ScenegraphNode` children. Since . A `GroupNode` can be a child of another `GroupNode` and thus be used to create hierarchical scene graphs.
+A `GroupNode` is a subclass of `ScenegraphNode` that holds a list of `ScenegraphNode` children. A `GroupNode` can be a child of another `GroupNode` and thus be used to create hierarchical scene graphs.
 
 ## Usage
 
-Add a moon and a box models to the group.
+Add moon and box models to the group.
 
 ```typescript
 // Add objects to the group
 group.add(moon, box);
 ```
 
-Add a moon and a box models to the group. Then remove them.
+Add moon and box models to the group. Then remove them.
 
 ```typescript
 // Add objects to the group
@@ -22,7 +22,7 @@ group.remove(moon);
 
 ## Properties
 
-`Model` extends the `ScenegraphNode` class and inherits the transformation matrix properties from that class.
+`GroupNode` extends the `ScenegraphNode` class and inherits the transformation matrix properties from that class.
 
 ### children : ScenegraphNode[]
 
@@ -46,7 +46,7 @@ A variable argument list of [ScenegraphNode](/docs/api-reference/engine/scenegra
 
 ### remove(node: Node)
 
-Removes an [ScenegraphNode](/docs/api-reference/engine/scenegraph/scenegraph-node) object from the GroupNode.
+Removes a [ScenegraphNode](/docs/api-reference/engine/scenegraph/scenegraph-node) object from the GroupNode.
 
     group.remove(model);
 

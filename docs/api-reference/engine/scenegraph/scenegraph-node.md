@@ -4,7 +4,7 @@ The `ScenegraphNode` is a base class for objects in the luma.gl scene graph, suc
 
 ## Usage
 
-`ScenegraphNode` is a base class, normally only instantiated via base classes.
+`ScenegraphNode` is a base class, normally only instantiated via subclasses.
 
 ```
 const model = new Model();
@@ -19,7 +19,7 @@ A Model instance has a number of public properties that can be accessed/modified
 
 - `position` (_object_) - A `Vector3` indicating the position of the Model.
 - `rotation` (_object_) - A `Vector3` indicating the rotation of the Model.
-- `scale` (_object_) - A `Vecto3` indicating the scaling of the Model.
+- `scale` (_object_) - A `Vector3` indicating the scaling of the Model.
 - `matrix` (_object_) - A `Matrix4` containing information about position, rotation and scale.
 
 This matrix gets updated each time the method `update` is called on a Model instance.

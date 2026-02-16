@@ -133,7 +133,7 @@ While it is possible to create multiple factories, most applications will use th
 
 ### createRenderPipeline()
 
-Get a program that fits the parameters provided. 
+Get a pipeline that fits the parameters provided. 
 
 ```typescript
 createRenderPipeline(props: RenderPipelineProps): RenderPipeline

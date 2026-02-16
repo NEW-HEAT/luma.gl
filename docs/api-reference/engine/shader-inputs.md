@@ -4,7 +4,7 @@ ShaderInputs holds uniform and binding values for one or more shader modules,
 - It can generate binary data for any uniform buffer
 - It can manage a uniform buffer for each block
 - It can update managed uniform buffers with a single call
-- It performs some book keeping on what has changed to minimize unnecessary writes to uniform buffers.
+- It performs some bookkeeping on what has changed to minimize unnecessary writes to uniform buffers.
 
 ## Usage
 
@@ -57,7 +57,7 @@ Create a new UniformStore instance
   constructor(modules: {[P in keyof ShaderPropsT]?: ShaderModuleInputs<ShaderPropsT[P]>})
 ```
 
-- modules: A mao of shader modules.
+- modules: A map of shader modules.
 
 ### `destroy()`
 

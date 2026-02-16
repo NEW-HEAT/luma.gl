@@ -4,7 +4,7 @@ The Geometry class holds a collection of vertex array attributes representing a 
 
 A geometry is considered a "primitive" when it can be rendered with a single GPU draw call. Multiple geometry primitives can be composed into a composite geometry using the `Mesh` and `Model` classes.
 
-To learn more about attributes refer to the `Accessor` class that holds metadata for each attributes.
+To learn more about attributes refer to the `Accessor` class that holds metadata for each attribute.
 
 ## Usage
 
@@ -75,5 +75,5 @@ Follows glTF/OpenGL/WebGL conventions:
 
 ## Remarks
 
-- The Geometry class does not take a `WebGLRenderingContext` and is intentionally
+- The Geometry class does not take a `WebGLRenderingContext` and is intentionally context-free.
 - The `Geometry` class holds the [glTF2 "primitive" specification](https://github.com/KhronosGroup/glTF/tree/master/specification/2.0), although morph `targets` are not yet supported.

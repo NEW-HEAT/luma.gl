@@ -1,6 +1,6 @@
 # Built-in Geometries
 
-**@luma.gl/engine** provides several built in geometry primitives (subclasses of [Geometry](/docs/api-reference/engine/geometry)). The generated geometry instances will have `indices` and `POSITION`, `NORMAL` and `TEXCOORD_0` attributes.
+**@luma.gl/engine** provides several built-in geometry primitives (subclasses of [Geometry](/docs/api-reference/engine/geometry)). The generated geometry instances will have `indices` and `POSITION`, `NORMAL` and `TEXCOORD_0` attributes.
 
 ## ConeGeometry
 
@@ -69,7 +69,7 @@ const sphere = new IcoSphereGeometry({
 
 ## PlaneGeometry
 
-Create a XZ plane.
+Create an XZ plane.
 
 ```typescript
 import {PlaneGeometry} from '@luma.gl/engine';
@@ -85,7 +85,7 @@ const plane = new PlaneGeometry({
 
 ### constructor(props : Object)
 
-- `props.type` - (_string_) Whether is a XY, YZ or XZ plane. Possible values are `x,y`, `x,z`, `y,z`.
+- `props.type` - (_string_) Whether it is an XY, YZ, or XZ plane. Possible values are `x,y`, `x,z`, `y,z`.
 - `props.xlen` - (_number_) The length along the x-axis. Only used in `x,z` or `x,y` planes.
 - `props.ylen` - (_number_) The length along the y-axis. Only used in `y,z` or `x,y` planes.
 - `props.zlen` - (_number_) The length along the z-axis. Only used in `x,z` or `y,z` planes.

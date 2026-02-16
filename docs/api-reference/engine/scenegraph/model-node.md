@@ -11,10 +11,10 @@
 
 ## Methods
 
-`ModelNode` wraps the following `Model` method and simply proxies them to its internal `Model`:
+`ModelNode` wraps the following `Model` methods and simply proxies them to its internal `Model`:
 
 - `draw`
 - `setUniforms`
 - `setAttributes`
 - `updateModuleSettings`
-- `delete` (calls `Model.delete` and also deletes managed resource)
+- `delete` (calls `Model.delete` and also deletes managed resources)

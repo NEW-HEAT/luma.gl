@@ -37,7 +37,7 @@ animationLoop.start({canvas: 'my-canvas'});
 | -------------------------- | ------------------------------ | ------- | -------------------------------------------------------------------------------------------------------------------- |
 | `device?`                  | `Device` \| `Promise<Device>`  |         | A `Device` to render into.                                                                                           |
 | `onInitialize?`            | (callback)                     |         | Called once after the first call to `animationLoop.start()`. Use to create GPU resources                             |
-| `onRender?`                | (callback)                     |         | - Called on every animation frame. Use to render .                                                                   |
+| `onRender?`                | (callback)                     |         | - Called on every animation frame. Use to render.                                                                    |
 | `onFinalize?`              | (callback)                     |         | - Called once when animation is stopped. Used to delete objects or free any resources created during `onInitialize?` |
 | `onError`                  | (callback)                     |         | - Called when an error is about to be thrown.                                                                        |
 | `autoResizeViewport?`      | `boolean`                      | `true`  | If true, auto resizes GPU viewport each frame before `onRender` is called.                                           |
@@ -47,7 +47,7 @@ animationLoop.start({canvas: 'my-canvas'});
 
 ### AnimationProps
 
-The `onInitialize`, `onRender` and `onFinalize`callbacks will be called with an object containing the following fields:
+The `onInitialize`, `onRender` and `onFinalize` callbacks will be called with an object containing the following fields:
 
 | Parameter         | Type                                     | Description                                                                         |
 | ----------------- | ---------------------------------------- | ----------------------------------------------------------------------------------- |
@@ -56,12 +56,12 @@ The `onInitialize`, `onRender` and `onFinalize`callbacks will be called with an 
 | `canvas`          | `HTMLCanvasElement` or `OffscreenCanvas` | The canvas associated with this context.                                            |
 | `aspect`          | `number`                                 | The canvas aspect ratio (width/height) to update projection matrices                |
 | `width`           |                                          | The drawing buffer width, in "device" pixels (can be different from canvas.width).  |
-| `height`          |                                          | The drawing buffer height, in "device" pixels (can be different from canvas.width). |
-| `useDevicePixels` | `boolean`                                | Boolean indicating if canvas is utilizes full resolution of Retina/                 |
+| `height`          |                                          | The drawing buffer height, in "device" pixels (can be different from canvas.height). |
+| `useDevicePixels` | `boolean`                                | Boolean indicating if canvas utilizes full resolution of Retina/HiDPI displays.     |
 | `needsRedraw`     | `String`                                 | Redraw flag (will be automatically set if drawingBuffer resizes)                    |
 | `time`            | `Number`                                 | Milliseconds since `AnimationLoopTemplate` was created (monotonic).                 |
 | `tick`            | `Number`                                 | Counter that updates for every frame rendered (monotonic).                          |
-| `renderPass`      | `RenderPass`                             | Availabel if `createFrameBuffer: true` was passed to the constructor.               |
+| `renderPass`      | `RenderPass`                             | Available if `createFrameBuffer: true` was passed to the constructor.               |
 | `_mousePosition`  | `[x, y]` or `null`                       | (**experimental**) Current mouse position over the canvas.                          |
 | `_timeline`       | `Timeline`                               | (**experimental**) `Timeline` object tracking the animation timeline and channels.  |
 
@@ -139,7 +139,7 @@ Notes:
 attachTimeline(timeline: Timeline)
 ```
 
-Attach an `Timeline` object to the animation loop. Allows time produced for animations to be paused, played, etc. See `Timeline` documentation for more info.
+Attach a `Timeline` object to the animation loop. Allows time produced for animations to be paused, played, etc. See `Timeline` documentation for more info.
 
 ### detachTimeline()
 
@@ -147,7 +147,7 @@ Detach the currently attached timeline from the animation loop.
 
 ### toDataURL()
 
-Returns returns a `Promise` that resolves to the data URL of the canvas once drawing operations are complete for the current frame. The data URL can be used as the `src` for an HTML image element.
+Returns a `Promise` that resolves to the data URL of the canvas once drawing operations are complete for the current frame. The data URL can be used as the `src` for an HTML image element.
 
 `animationLoop.toDataURL()`
 
@@ -157,7 +157,7 @@ The callbacks `onInitialize`, `onRender` and `onFinalize` that the app supplies 
 
 ### Frame timers
 
-- The animation loop tracks GPU and CPU render time of each frame the in member properties `cpuTime` and `gpuTime`. If `gpuTime` is set to `-1`, then the timing for the last frame was invalid and should not be used (this rare and might occur, for example, if the GPU was throttled mid-frame).
+- The animation loop tracks GPU and CPU render time of each frame in the member properties `cpuTime` and `gpuTime`. If `gpuTime` is set to `-1`, then the timing for the last frame was invalid and should not be used (this rare and might occur, for example, if the GPU was throttled mid-frame).
 
 
 ## Remarks
@@ -168,5 +168,5 @@ The callbacks `onInitialize`, `onRender` and `onFinalize` that the app supplies 
 - Postpones context creation until the page (i.e. all HTML) has been loaded. At this time it is safe to specify canvas ids.
 - The supplied callback function must return a WebGLRenderingContext or an error will be thrown.
 - This callback registration function should not be called if a `WebGLRenderingContext` was supplied to the AnimationLoop constructor.
-- `useDevicePixels` can accept a custom ratio (Number), instead of `true` or `false`. This allows rendering to a much smaller or higher resolutions. When using high value (usually more than device pixel ratio), it is possible it can get clamped down, this happens due to system memory limitation, in such cases a warning will be logged to the browser console.
-- `onInitialize`` is called after page load completes and the passed in device promise has been resolved (the device has been created).
+- `useDevicePixels` can accept a custom ratio (Number), instead of `true` or `false`. This allows rendering at much smaller or higher resolutions. When using high value (usually more than device pixel ratio), it is possible it can get clamped down, this happens due to system memory limitation, in such cases a warning will be logged to the browser console.
+- `onInitialize` is called after page load completes and the passed in device promise has been resolved (the device has been created).
