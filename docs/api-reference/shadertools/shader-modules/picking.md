@@ -18,12 +18,12 @@ The `picking` modules supports picking and highlighting for both instanced and n
 
 Color based picking lets the application draw a primitive with a color that can later be used to index this specific primitive.
 
-Highlighting allows application to specify a picking color corresponding to an object that need to be highlighted and the highlight color to be used.
+Highlighting allows application to specify a picking color corresponding to an object that needs to be highlighted and the highlight color to be used.
 
 
 ## Usage
 
-In your vertex shader, your inform the picking module what object we are currently rendering by supplying a picking color, perhaps from an attribute.
+In your vertex shader, you inform the picking module what object we are currently rendering by supplying a picking color, perhaps from an attribute.
 
 ```ts
 attribute vec3 aPickingColor;
@@ -60,7 +60,7 @@ main() {
 }
 ```
 
-If you would like to apply the highlight color to the currently selected element call `picking_filterHighlightColor` before calling `picking_filterPickingColor`. You can also apply other filters on the non-picking color (vertex or highlight color) by placing those instruction between these two function calls.
+If you would like to apply the highlight color to the currently selected element call `picking_filterHighlightColor` before calling `picking_filterPickingColor`. You can also apply other filters on the non-picking color (vertex or highlight color) by placing those instructions between these two function calls.
 
 ```ts
 main() {

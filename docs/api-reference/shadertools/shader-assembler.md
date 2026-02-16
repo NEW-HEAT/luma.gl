@@ -3,7 +3,7 @@
 The functionality of the `shadertools` module shader system is primarily exposed 
 via the `ShaderAssembler` class.
 
-`shaderAssebler.assembleShaders()` composes base vertex and fragment shader source with 
+`shaderAssembler.assembleShaders()` composes base vertex and fragment shader source with 
 - shader modules 
 - hook functions 
 - and injections 
@@ -24,7 +24,7 @@ Common options
 - `prologue`=`true` (Boolean) - Will inject platform prologue (see below)
 - `defines`=`{}` (Object) - a map of key/value pairs representing custom `#define`s to be injected into the shader source
 - `modules`=`[]` (Array) - list of shader modules
-- `inject`=`{}` (Object) - map of substituions,
+- `inject`=`{}` (Object) - map of substitutions,
 - `hookFunctions`=`[]` Array of hook functions descriptions. Descriptions can simply be the hook function signature (with a prefix `vs` for vertex shader, or `fs` for fragment shader) or an object with the hook signature, and a header and footer that will always appear in the hook function.
 
 Example of hook function
@@ -58,7 +58,7 @@ Remove a module that is automatically being added to programs created by the pro
 
 ### `addShaderHook(hook: string, [opts: Object])`
 
-Creates a shader hook function that shader modules can injection code into. Shaders can call these functions, which will be no-ops by default. If a shader module injects code it will be executed upon the hook function call. This mechanism allows the application to create shaders that can be automatically extended by included shader modules.
+Creates a shader hook function that shader modules can inject code into. Shaders can call these functions, which will be no-ops by default. If a shader module injects code it will be executed upon the hook function call. This mechanism allows the application to create shaders that can be automatically extended by included shader modules.
 
 - `hook`: `vs:` or `fs:` followed by the name and arguments of the function, e.g. `vs:MYHOOK_func(inout vec4 value)`. Hook name without arguments
   will also be used as the name of the shader hook
@@ -67,7 +67,7 @@ Creates a shader hook function that shader modules can injection code into. Shad
 
 ### `assembleShader(options: AssembleShaderOptions)`
 
-generate the shader source that can be used to create a shader and then a pipeline.
+Generate the shader source that can be used to create a shader and then a pipeline.
 
 - composes a single shader source (compute or unified vertex/fragment WGSL shader) with source from shader modules, 
 - resolving hook functions and injections to 
@@ -100,7 +100,7 @@ luma.gl's module shader system is primarily exposed via the function `assembleSh
 
 ## Shader Hooks and Module Injections
 
-Shader hooks and module injections are a system that allows for shader to be written in a generic manner, with behaviour modified when modules are included. For example if we define a shader hook as `fs:MY_HOOK_FUNCTION(inout vec4 color)`, `assembleShader` will inject the following function automatically into our fragment shader:
+Shader hooks and module injections are a system that allows for shaders to be written in a generic manner, with behavior modified when modules are included. For example if we define a shader hook as `fs:MY_HOOK_FUNCTION(inout vec4 color)`, `assembleShader` will inject the following function automatically into our fragment shader:
 
 ```c
 void MY_HOOK_FUNCTION(inout vec4 color) {
@@ -108,7 +108,7 @@ void MY_HOOK_FUNCTION(inout vec4 color) {
 }
 ```
 
-We can the write our fragment shader as follows:
+We can then write our fragment shader as follows:
 
 ```c
 precision highp float;

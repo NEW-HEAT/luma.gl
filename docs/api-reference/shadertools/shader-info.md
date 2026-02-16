@@ -19,4 +19,4 @@ function getShaderInfo(shaderSource: string): {
 Returns:
 - `name`
 - `language`: `'glsl'`
-- `version`: WGLS version (100) or GLSL version (300)
+- `version`: WGSL version (100) or GLSL version (300)

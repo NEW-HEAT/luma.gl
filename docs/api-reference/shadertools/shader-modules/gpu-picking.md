@@ -6,9 +6,9 @@
 
 Provides support for GPU-based picking.
 
-Picking is a key capability for most interactive applications. Consult the API guide learn more about [picking](/docs/api-guide/engine/interactivity). 
+Picking is a key capability for most interactive applications. Consult the API guide to learn more about [picking](/docs/api-guide/engine/interactivity). 
 
-GPU picking is based on the conclusion that each pixel on the screen was generated while rendering some "object", which in luma.gl can often be thought of as one row in an a data table being rendered.
+GPU picking is based on the conclusion that each pixel on the screen was generated while rendering some "object", which in luma.gl can often be thought of as one row in a data table being rendered.
 
 ## Under the Hood
 
@@ -26,28 +26,28 @@ The `gpuPicking` modules supports:
 - pick "group of primitives" with the same picking color in non-instanced draw-calls
 - highlight "group of primitives" with the same picking color in non-instanced draw-calls
 
-Highlighting allows applications to specify a picking color corresponding to an object that need to be highlighted and the highlight color to be used.
+Highlighting allows applications to specify a picking color corresponding to an object that needs to be highlighted and the highlight color to be used.
 
 ## About GPU based picking
 
-GPU based picking has a couple of significant advantage over CPU-based picking:
+GPU based picking has a couple of significant advantages over CPU-based picking:
 - GPU-based picking is a picking technique that can be performed entirely on the GPU, meaning that it is very performant, especially when picking is done every frame.
 
 - can be added to any existing shaders 
 - and is independent of the structure of the input geometry or rendering without requiring any additional picking logic to that shader, beyond calling one function in the vertex shader and one function in the fragment shader.
 
-Note that GPU-based picking does comes with some limitations:
-- Picking occluding objects require re-rendering and discarding the already picked objects.
+Note that GPU-based picking does come with some limitations:
+- Picking occluding objects requires re-rendering and discarding the already picked objects.
 - On WebGL-specific: the read back of the picking data from the picking texture can only be done synchronously, causing a GPU pipeline stall, which can defeat some of the performance advantages.
 
-Traditional 3d frameworks often support CPU-based picking. While luma.gl does not include an CPU-based picking algorithms, CPU based picking techniques do have advantages: 
+Traditional 3d frameworks often support CPU-based picking. While luma.gl does not include a CPU-based picking algorithm, CPU based picking techniques do have advantages: 
  - They can often provide precise intersection points on objects and they are better at handling picking of multiple objects, especially for objects that are occluded. 
  - However CPU based picking techniques are slower and can require more data on the CPU or they may need to be customized to the structure of the input data.
 
 
 ## Usage
 
-In your vertex shader, your inform the picking module what object we are currently rendering by supplying a picking color, perhaps from an attribute.
+In your vertex shader, you inform the picking module what object we are currently rendering by supplying a picking color, perhaps from an attribute.
 
 ```ts
 attribute vec3 aPickingColor;
@@ -84,7 +84,7 @@ main() {
 }
 ```
 
-If you would like to apply the highlight color to the currently selected element call `picking_filterHighlightColor` before calling `picking_filterPickingColor`. You can also apply other filters on the non-picking color (vertex or highlight color) by placing those instruction between these two function calls.
+If you would like to apply the highlight color to the currently selected element call `picking_filterHighlightColor` before calling `picking_filterPickingColor`. You can also apply other filters on the non-picking color (vertex or highlight color) by placing those instructions between these two function calls.
 
 ```ts
 main() {

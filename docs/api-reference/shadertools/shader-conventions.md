@@ -2,7 +2,7 @@
 
 :::caution
 This describes informal conventions that luma.gl applies to its shaders. 
-It is still a work in progress/
+It is still a work in progress.
 :::
 
 ## Uniform Blocks

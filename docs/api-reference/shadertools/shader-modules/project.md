@@ -7,7 +7,7 @@ calculating positions.
 
 ## Parameters
 
-`getUniforms` take the following parameters when the `picking` module is
+`getUniforms` takes the following parameters when the `project` module is
 included.
 
 - `projection` (Array[16], false) -

@@ -65,7 +65,7 @@ If `deprecations` is supplied, `assembleShaders` will scan shader source code fo
 
 ### Statically defining Uniforms
 
-If the uniforms of this module can be directly pulled from user props, they may declaratively defined by a `defaultUniforms` object:
+If the uniforms of this module can be directly pulled from user props, they may be declaratively defined by a `defaultUniforms` object:
 
 ```typescript
 {
@@ -79,7 +79,7 @@ At runtime, this map will be used to generate the uniforms needed by the shaders
 
 ### Dynamically defining Uniforms
 
-The shader module may want to perform more complex logic when mapping the user' module props to uniforms. This can be achieved using `getUniforms()`:
+The shader module may want to perform more complex logic when mapping the user's module props to uniforms. This can be achieved using `getUniforms()`:
 
 ```typescript
 {
